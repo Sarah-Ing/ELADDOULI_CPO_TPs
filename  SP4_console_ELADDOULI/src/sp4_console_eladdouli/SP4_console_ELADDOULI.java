@@ -14,7 +14,10 @@ public class SP4_console_ELADDOULI {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+      Joueur joueur1 = new Joueur() ;// ça c'est pas encore bon
+      
+      
+      
     }
     
 }
