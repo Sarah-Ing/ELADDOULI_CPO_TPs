@@ -14,7 +14,12 @@ public class TP2_convertisseurObjet_ELADDOULI {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        
+        Convertisseur essaie1 = new Convertisseur(273.02) ;
+        essaie1.CelciusVersKelvin;
+        
+        
     }
     
 }
