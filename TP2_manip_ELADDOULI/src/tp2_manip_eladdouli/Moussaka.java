@@ -10,5 +10,10 @@ package tp2_manip_eladdouli;
  */
 public class Moussaka {
     
+     int nbCalories ;
     
+    public Moussaka() 
+     {
+      nbCalories = 0 ;
+     }
 }
