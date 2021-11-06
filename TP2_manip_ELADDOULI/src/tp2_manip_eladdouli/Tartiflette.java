@@ -10,4 +10,11 @@ package tp2_manip_eladdouli;
  */
 public class Tartiflette {
     
+    int nbCalories ;
+    
+    public Tartiflette() 
+     {
+      nbCalories = 0 ;
+     }
+    
 }
