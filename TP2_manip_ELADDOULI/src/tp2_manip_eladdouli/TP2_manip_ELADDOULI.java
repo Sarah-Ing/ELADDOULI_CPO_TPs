@@ -10,7 +10,7 @@ package tp2_manip_eladdouli;
  */
 public class TP2_manip_ELADDOULI {
 
-    /**
+    /** 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class TP2_manip_ELADDOULI {
         System.out.println("nb de calories de Assiette 2 : " + assiette2.nbCalories) ;
         System.out.println("nb de calories de Assiette 3 : " + assiette3.nbCalories) ;
         
-        
+          
         
     }
     
