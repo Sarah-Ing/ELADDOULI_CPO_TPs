@@ -17,7 +17,8 @@ public class TP2_convertisseurObjet_ELADDOULI {
         
         
         Convertisseur essaie1 = new Convertisseur(273.02) ;
-        essaie1.CelciusVersKelvin;
+        essaie1.CelciusVersKelvin; 
+         
         
         
     }
