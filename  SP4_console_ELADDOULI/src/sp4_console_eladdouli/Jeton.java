@@ -14,12 +14,13 @@ public class Jeton
     
     
 public Jeton (String c) 
-{
-   couleur = c ;
-  
-}
-public String lireCouleur () {
+    {
+    couleur = c ;
+    }
+
+public String lireCouleur () 
+    {
     return (couleur);
-}
+    }
 
 }
