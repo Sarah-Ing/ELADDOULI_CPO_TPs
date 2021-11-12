@@ -31,7 +31,11 @@ public class Cellule {
     
     public string lireCouleurDuJeton() 
     {
-        System.out.println(Couleur);
+    if(jetonCourant != null)
+        {
+            return jetonCourant.couleur;
+        }
+    else {return "vide";}
     }
 
     
