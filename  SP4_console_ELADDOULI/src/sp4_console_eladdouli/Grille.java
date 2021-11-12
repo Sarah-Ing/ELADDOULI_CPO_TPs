@@ -33,7 +33,10 @@ public class Grille {
     
     public boolean etreRemplie()
     {
-    for (int)
+        for (int j = 0; j<= 6; j++)
+            {if (CellulesJeu[0][j] == null){return false;}
+        } 
+        return true;      
     }
     
     public void viderGrille()
