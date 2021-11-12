@@ -40,10 +40,21 @@ public class Grille {
     }
     
     public void viderGrille()
-    {}
+    {
+       for(int i= 0; i<= 5; i++)
+       {
+           for (int j = 0; j<= 6; j++)
+            {CellulesJeu[i][j].jetonCourant = null;}
+       }}
     
     public void afficherGrilleSurConsole()
-    {}
+    {
+        for(int i= 0; i<= 5; i++)
+       {
+           for (int j = 0; j<= 6; j++)
+        System.out.print(CellulesJeu[i][j]);
+       }   
+    }
     
     public boolean celluleOccupee(int,int)
     {}
