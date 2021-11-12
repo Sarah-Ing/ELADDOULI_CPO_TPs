@@ -15,8 +15,8 @@ public class SP4_console_ELADDOULI {
      */
     public static void main(String[] args) {
       Joueur joueur1 = new Joueur() ;// ça c'est pas encore bon
-      
-      
+     
+       
       
     }
     
