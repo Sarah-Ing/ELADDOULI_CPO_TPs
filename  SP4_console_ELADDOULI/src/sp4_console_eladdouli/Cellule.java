@@ -10,4 +10,57 @@ package sp4_console_eladdouli;
  */
 public class Cellule {
     
+    Jeton jetonCourant;
+    boolean trouNoir;
+    boolean desintegrateur;
+    
+    public Cellule() {
+        jetonCourant = null;
+        trouNoir = false;
+        desintegrateur = false;
+    }
+    
+    public boolean affecterJeton(Jeton j) {
+    if (jetonCourant == null) 
+        { jetonCourant = j;
+        return true;
+        }
+    else
+        {return false;}
+    }
+    
+    public string lireCouleurDuJeton() 
+    {
+        System.out.println(Couleur);
+    }
+
+    
+    //public Jeton recupererJeton() {} 
+    
+   /* public boolean supprimerJeton() 
+    {  if (jetonCourant != null) 
+        { jetonCourant = null;
+        return true; 
+        }
+    else
+        {return false;}
+    }
+    
+    public boolean placerTrouNoir() {}
+    
+    public boolean placerDesintegrateur() {}
+    
+    public boolean presenceTrouNoir() {}
+    
+    public boolean presenceDesintegrateur() {}
+    
+    
+    public boolean recupererDesintegrateur() {}
+    
+    public boolean activerTrouNoir() {}
+            
+           */
+            
+    
+    
 }
