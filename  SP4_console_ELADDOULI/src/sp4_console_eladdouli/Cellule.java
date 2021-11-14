@@ -29,7 +29,7 @@ public class Cellule {
         {return false;}
     }
     
-    public string lireCouleurDuJeton() 
+    public String lireCouleurDuJeton() 
     {
     if(jetonCourant != null)
         {
