@@ -15,7 +15,7 @@ public class Joueur
     Jeton [] ListeJetons = new Jeton[21]; // int ????
     int nombreJetonsRestants; 
 // nombreJetonsRestants: nombre de jetons restant en possession du joueur, correspondant à la taille effective de ListeJetons
-
+    
     
     public Joueur (String unNom)
         { nom = unNom;
