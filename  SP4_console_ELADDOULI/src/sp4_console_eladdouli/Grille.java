@@ -70,23 +70,39 @@ public class Grille {
      return CellulesJeu[c][d].lireCouleurDuJeton();
     }
     
-    public boolean etreGagnantePourJoueur(Joueur S)
+    public boolean etreGagnantePourJoueur(Joueur joueur)
     {
-    if () { 
+    for (int l = 0; l <=5; l++)  // l = ligne
+    {for (int col = 0; col <=3; col++) //col = colonne 
+          { 
            // 4 pions de sa couleur sont alignés en ligne
-          }
-    {return true;}
+           if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
+               && CellulesJeu[l][col+1].lireCouleurDuJeton() == joueur.Couleur
+                   && CellulesJeu[l][col+2].lireCouleurDuJeton() == joueur.Couleur
+                        && CellulesJeu[l][col+3].lireCouleurDuJeton() == joueur.Couleur) 
+           {return true;}
+          }}
+   
+          
+           
+   for (int col = 0; col <=2; col++) //col = colonne 
+    {for (int l = 0; l <=6; l++)  // l = ligne
+          { 
+           // 4 pions de sa couleur sont alignés en colonne 
+           if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
+               && CellulesJeu[l+1][col].lireCouleurDuJeton() == joueur.Couleur
+                   && CellulesJeu[l+2][col].lireCouleurDuJeton() == joueur.Couleur
+                        && CellulesJeu[l+3][col].lireCouleurDuJeton() == joueur.Couleur) 
+           {return true;}
+          }}
     
-    if () { 
-           // 4 pions de sa couleur sont alignés en colonne
-          }
-    {return true;}
     
+   
+ // 4 pions de sa couleur sont alignés en diagonale
+           
     
-    if () { 
-           // 4 pions de sa couleur sont alignés en diagonale
-          }
-    {return true;}
+        {return false;}
+    
     }
     
     //public void tasserGrille(int){}
