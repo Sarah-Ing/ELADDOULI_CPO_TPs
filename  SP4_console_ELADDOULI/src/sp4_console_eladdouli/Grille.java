@@ -15,6 +15,7 @@ public class Grille {
     public Grille()
     {CellulesJeu = new Cellule[6][7];}
     
+    
     public boolean ajouterJetonDansColonne(Jeton j, int col)
     {
     if (CellulesJeu[0][col] != null) 
@@ -56,19 +57,48 @@ public class Grille {
        }   
     }
     
-    public boolean celluleOccupee(int,int)
-    {}
+    public boolean celluleOccupee(int a,int b)
+    {
+                if (CellulesJeu[a][b].jetonCourant==null)
+                {return false;}
+            
+    return true;
+    }
     
-    public String lireCouleurDuJeton(int, int)
-    {}
+    public String lireCouleurDuJeton(int c, int d)
+    {
+     return CellulesJeu[c][d].lireCouleurDuJeton();
+    }
     
-    public boolean etreGagnantePourJoueur(Joueur)
-    {}
+    public boolean etreGagnantePourJoueur(Joueur S)
+    {
+    if () { 
+           // 4 pions de sa couleur sont alignés en ligne
+          }
+    {return true;}
+    
+    if () { 
+           // 4 pions de sa couleur sont alignés en colonne
+          }
+    {return true;}
+    
+    
+    if () { 
+           // 4 pions de sa couleur sont alignés en diagonale
+          }
+    {return true;}
+    }
     
     //public void tasserGrille(int){}
     
-    public boolean colonneRemplie()
-    {}
+    public boolean colonneRemplie(int j)
+    {
+    if (CellulesJeu[0][j]!= null)
+        {
+            return true;
+        }
+    return false;
+    }
     
     //public boolean placerTrouNoir(int, int){}
     
