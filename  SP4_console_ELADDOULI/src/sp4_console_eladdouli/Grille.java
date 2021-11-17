@@ -98,9 +98,31 @@ public class Grille {
     
     
    
- // 4 pions de sa couleur sont alignés en diagonale
-           
-    
+ // 4 pions de sa couleur sont alignés en DIAGONALE
+ 
+ // MONTANTE          
+ for (int col = 0; col <=2; col++) //col = colonne 
+    {for (int l = 0; l <=3; l++)  // l = ligne
+          { 
+           // 4 pions de sa couleur sont alignés en colonne 
+           if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
+               && CellulesJeu[l+1][col+1].lireCouleurDuJeton() == joueur.Couleur
+                   && CellulesJeu[l+2][col+2].lireCouleurDuJeton() == joueur.Couleur
+                        && CellulesJeu[l+3][col+3].lireCouleurDuJeton() == joueur.Couleur) 
+           {return true;}
+          }}
+ 
+ // DESCENDENTE
+ for (int col = 0; col <=2; col++) //col = colonne 
+    {for (int l = 0; l <=6; l++)  // l = ligne
+          { 
+           // 4 pions de sa couleur sont alignés en colonne 
+           if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
+               && CellulesJeu[l-1][col+1].lireCouleurDuJeton() == joueur.Couleur
+                   && CellulesJeu[l-2][col+2].lireCouleurDuJeton() == joueur.Couleur
+                        && CellulesJeu[l-3][col+3].lireCouleurDuJeton() == joueur.Couleur) 
+           {return true;}
+          }}
         {return false;}
     
     }
