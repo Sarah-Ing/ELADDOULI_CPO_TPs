@@ -9,5 +9,24 @@ package sp4_console_eladdouli;
  * @author sarah
  */
 public class Partie {
+    // Grillejeu = new Grille
+    
+    Joueur ListeJoueurs[] = new Joueur[2];
+    joueurCourant = new Joueur;
+    grillejeu = new Grille;
+    
+    
+    
+    public Partie (Joueur, Joueur)
+    {}
+            
+    public void attribuerCouleursAuxJoueurs() 
+    {}
+    
+    public void initialiserPartie()
+    {}
+    
+    public void debuterPartie()
+    {}
     
 }
