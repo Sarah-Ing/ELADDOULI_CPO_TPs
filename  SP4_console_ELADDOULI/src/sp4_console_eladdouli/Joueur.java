@@ -13,6 +13,30 @@ public class Joueur
     String nom;
     String Couleur;
     Jeton [] ListeJetons = new Jeton[21]; // int ????
-    int nombreJetonsRestants; // nombreJetonsRestants: nombre de jetons restant en possession du joueur, correspondant à la taille effective de ListeJetons
+    int nombreJetonsRestants; 
+// nombreJetonsRestants: nombre de jetons restant en possession du joueur, correspondant à la taille effective de ListeJetons
 
+    
+    public Joueur (String unNom)
+        { nom = unNom;
+        }
+    
+    public void affecterCouleur(String UneCouleur)
+        { Couleur = UneCouleur;}
+    
+    public boolean ajouterJeton(Jeton j)
+        { 
+         if (nombreJetonsRestants > ListeJetons.length)
+         { return false ;}
+         else 
+         {  nombreJetonsRestants += 1;
+             return true ;}    
+        }
+    
+    /*obtenirDesintegrateur()
+        {;}
+    
+    utiliserDesintegrateur()
+        {;}
+    */
 }
