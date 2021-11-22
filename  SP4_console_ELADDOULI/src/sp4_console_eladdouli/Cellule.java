@@ -50,20 +50,51 @@ public class Cellule {
         {return false;}
     }
     
-    public boolean placerTrouNoir() {}
+    */
     
-    public boolean placerDesintegrateur() {}
+    public boolean placerTrouNoir() 
+    {
+    if (trouNoir == false) 
+       {trouNoir = true ;
+       return true;}
+   
+    return false ;
+    }
     
-    public boolean presenceTrouNoir() {}
+    //public boolean placerDesintegrateur() {}
     
-    public boolean presenceDesintegrateur() {}
+    public boolean presenceTrouNoir() 
+    {
+    if (trouNoir == true) 
+       {return true;}
+   
+    return false ;}
+    
+    //public boolean presenceDesintegrateur() {}
     
     
-    public boolean recupererDesintegrateur() {}
+    //public boolean recupererDesintegrateur() {}
     
-    public boolean activerTrouNoir() {}
+    public boolean activerTrouNoir() 
+    {
+    if (trouNoir == false) 
+       {return false;}
+   
+    if (trouNoir == true)
+    { 
+        if (jetonCourant != null)
             
-           */
+        {
+            jetonCourant = null;
+            trouNoir = false;
+            return true;
+        }
+    }
+    
+    
+    }
+            
+           
             
     
     
