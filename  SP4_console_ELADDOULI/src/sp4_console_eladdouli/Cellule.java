@@ -89,7 +89,7 @@ public class Cellule {
             trouNoir = false;
             return true;
         }
-    }
+    } 
     
     
     }
