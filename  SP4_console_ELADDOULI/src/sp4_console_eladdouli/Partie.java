@@ -27,16 +27,28 @@ public class Partie {
             
     public void attribuerCouleursAuxJoueurs() 
     {
-    ListeJoueurs[0].Couleur = "rouge" ;
-    ListeJoueurs[1].Couleur = "jaune" ;
+    ListeJoueurs[0].affecterCouleur("jaune") ;
+    ListeJoueurs[1].affecterCouleur("rouge") ;
     }
     
     public void initialiserPartie()
     {
     Grille grillejeu = new Grille();
     
+    for (int i = 0; i <= 21; i++)
+    {
+    Jeton j = new Jeton ("jaune") ;
+    ListeJoueurs[0].ajouterJeton(j); 
+    }
+    
+     for (int e = 0; e <= 21; e++)
+    {
+    Jeton g = new Jeton ("rouge") ;
+    ListeJoueurs[1].ajouterJeton(g); 
+    }
+    
     //joueur 
-    Scanner sc = new Scanner(System.in);
+    /*Scanner sc = new Scanner(System.in);
     
     
     Joueur joueur1 = new Joueur(sc.nextLine());
@@ -49,7 +61,7 @@ public class Partie {
     
     
     
-    }
+    }*/
     
     public void debuterPartie()
     {
