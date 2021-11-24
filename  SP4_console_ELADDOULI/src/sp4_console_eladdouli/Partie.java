@@ -15,7 +15,7 @@ public class Partie {
     
     Joueur ListeJoueurs[] = new Joueur[2];
     Joueur joueurCourant = null;
-    
+    Grille grillejeu = new Grille();
     
     
     
@@ -33,7 +33,7 @@ public class Partie {
     
     public void initialiserPartie()
     {
-    Grille grillejeu = new Grille();
+    grillejeu = new Grille();
     
     for (int i = 0; i <= 21; i++)
     {
@@ -65,6 +65,48 @@ public class Partie {
     
     public void debuterPartie()
     {
+        
+    joueurCourant = ListeJoueurs[0]; 
+    
+    while (grilleJeu.etreGagnantePourJoueur(ListeJoueurs[0])==false && grilleJeu.etreGagnantePourJoueur(ListeJoueurs[1])== false && grilleJeu.etreRemplie()==false){
+       Jeton x;
+            x = ListeJoueurs[0].ListeJetons[0];
+            grilleJeu.ajouterJetonDansColonne(x,col);
+        
+    boolean coupValide = false; 
+        
+    while (coupValide == false)
+    {
+    Scanner sc = new Scanner(System.in);
+    System.out.println ("Saisissez la colonne : ");
+    var col = sc.nextInt();
+    
+    
+    if (col <= 7 && col >= 1 )
+        {
+                if (grillejeu.colonneRemplie(col-1))
+                {coupValide = true; }
+        }
+    else 
+        { 
+                System.out.println ("erreur, choisissez un nombre entre 1 et 7");
+                coupValide = false; 
+        }
+    
+    }
+    
+    
+    //joueurCourant
+            
+    
+    grillejeu.joueurCourant.ListeJetons[i] = grillejeu.joueurCourant.ListeJetons[i-1];
+    
+    }
+    
+    
+    
+    Jeton x ;
+    
     
     }
     
