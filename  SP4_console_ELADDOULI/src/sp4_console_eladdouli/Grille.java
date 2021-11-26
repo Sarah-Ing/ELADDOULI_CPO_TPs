@@ -84,18 +84,19 @@ return true;
             {
                 // 4 pions de sa couleur sont alignés en ligne
 
-                if (joueur.Couleur == CellulesJeu[l][col].lireCouleurDuJeton()
-                        && joueur.Couleur == CellulesJeu[l][col + 1].lireCouleurDuJeton()
-                        && joueur.Couleur == CellulesJeu[l][col + 2].lireCouleurDuJeton()
-                        && joueur.Couleur == CellulesJeu[l][col + 3].lireCouleurDuJeton()) {
+                if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
+                        && CellulesJeu[l][col + 1].lireCouleurDuJeton() == joueur.Couleur
+                        && CellulesJeu[l][col + 2].lireCouleurDuJeton() == joueur.Couleur
+                        && CellulesJeu[l][col + 3].lireCouleurDuJeton() == joueur.Couleur) 
+                {
                     return true;
                 }
             }
         }
 
-        for (int col = 0; col <= 2; col++) //col = colonne 
+        for (int col = 0; col <= 6; col++) //col = colonne 
         {
-            for (int l = 0; l < 6; l++) // l = ligne
+            for (int l = 0; l <= 2; l++) // l = ligne //j'ai changé l<6 pour l<5
             {
                 // 4 pions de sa couleur sont alignés en colonne 
                 if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur
@@ -109,9 +110,9 @@ return true;
 
         // 4 pions de sa couleur sont alignés en DIAGONALE
         // MONTANTE          
-        for (int col = 0; col <= 2; col++) //col = colonne 
+        for (int col = 0; col <= 3; col++) //col = colonne 
         {
-            for (int l = 0; l <= 3; l++) // l = ligne
+            for (int l = 0; l <= 2; l++) // l = ligne
             {
                 // 4 pions de sa couleur sont alignés en colonne 
                 if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur
@@ -124,9 +125,9 @@ return true;
         }
 
         // DESCENDENTE
-        for (int col = 0; col <= 2; col++) //col = colonne 
+        for (int col = 0; col <= 3; col++) //col = colonne 
         {
-            for (int l = 0; l < 6; l++) // l = ligne
+            for (int l = 3; l <= 5; l++) // l = ligne
             {
                 // 4 pions de sa couleur sont alignés en colonne 
                 if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur
