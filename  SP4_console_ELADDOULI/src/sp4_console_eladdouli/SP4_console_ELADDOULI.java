@@ -13,11 +13,20 @@ public class SP4_console_ELADDOULI {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-      Joueur joueur1 = new Joueur() ;// ça c'est pas encore bon
+    public static void main(String[] args) 
+    
+    {
+      //Joueur joueur1 = new Joueur() ;// ça c'est pas encore bon
      
        
+      Joueur joueur1= new Joueur("sarah");
+      Joueur joueur2 = new Joueur("sarah bis");
+     
+      Partie p = new Partie (joueur1,joueur2);
       
+      p.initialiserPartie();
+      
+      p.debuterPartie();
     }
     
 }
