@@ -13,20 +13,26 @@ public class Grille {
     
 
     public Grille()
-    {CellulesJeu = new Cellule[6][7];}
+    {CellulesJeu = new Cellule[6][7];
+   
+    for (int i = 0; i <6; i++)
+    { for (int j = 0; j<7; j++) 
+        {
+         CellulesJeu[i][j] =  new Cellule();}
+        }
+    }
     
     
     public boolean ajouterJetonDansColonne(Jeton j, int col)
     {
-    if (CellulesJeu[0][col] != null) 
+    if (CellulesJeu[0][col].jetonCourant != null) 
     {return false;}
     else 
     {
-        for(int i= 0; i<= 5; i++)
+        for(int i= 5; i>= 0; i++)
         {
-            
-            if(CellulesJeu[i][col] != null)
-            {CellulesJeu[i-1][col].affecterJeton(j);}
+            if(CellulesJeu[i][col].jetonCourant == null)
+            {CellulesJeu[i][col].affecterJeton(j);}
         }  return true;
     }
    
@@ -53,8 +59,9 @@ public class Grille {
         for(int i= 0; i<= 5; i++)
        {
            for (int j = 0; j<= 6; j++)
-        System.out.print(CellulesJeu[i][j]);
-       }   
+        System.out.print(" " + CellulesJeu[i][j].lireCouleurDuJeton()+ " ");
+       }  
+        System.out.println();
     }
     
     public boolean celluleOccupee(int a,int b)
@@ -76,17 +83,20 @@ public class Grille {
     {for (int col = 0; col <=3; col++) //col = colonne 
           { 
            // 4 pions de sa couleur sont alignés en ligne
-           if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
-               && CellulesJeu[l][col+1].lireCouleurDuJeton() == joueur.Couleur
-                   && CellulesJeu[l][col+2].lireCouleurDuJeton() == joueur.Couleur
-                        && CellulesJeu[l][col+3].lireCouleurDuJeton() == joueur.Couleur) 
+          
+           if (joueur.Couleur == CellulesJeu[l][col].lireCouleurDuJeton()  
+                  && joueur.Couleur == CellulesJeu[l][col+1].lireCouleurDuJeton()
+                   && joueur.Couleur == CellulesJeu[l][col+2].lireCouleurDuJeton() 
+                        && joueur.Couleur == CellulesJeu[l][col+3].lireCouleurDuJeton() ) 
            {return true;}
-          }}
+          
+        //else {return false;}
+    }}
    
           
            
    for (int col = 0; col <=2; col++) //col = colonne 
-    {for (int l = 0; l <=6; l++)  // l = ligne
+    {for (int l = 0; l <6; l++)  // l = ligne
           { 
            // 4 pions de sa couleur sont alignés en colonne 
            if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
@@ -114,7 +124,7 @@ public class Grille {
  
  // DESCENDENTE
  for (int col = 0; col <=2; col++) //col = colonne 
-    {for (int l = 0; l <=6; l++)  // l = ligne
+    {for (int l = 0; l <6; l++)  // l = ligne
           { 
            // 4 pions de sa couleur sont alignés en colonne 
            if (CellulesJeu[l][col].lireCouleurDuJeton() == joueur.Couleur 
