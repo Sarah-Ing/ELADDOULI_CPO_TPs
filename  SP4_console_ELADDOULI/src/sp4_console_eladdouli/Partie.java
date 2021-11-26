@@ -36,13 +36,13 @@ public class Partie {
     {
     grillejeu = new Grille();
     
-    for (int i = 0; i <= 21; i++)
+    for (int i = 0; i < 21; i++)
         {
         Jeton j = new Jeton ("jaune") ;
         ListeJoueurs[0].ajouterJeton(j); 
         }
     
-     for (int e = 0; e <= 21; e++)
+     for (int e = 0; e <21; e++)
         {
         Jeton g = new Jeton ("rouge") ;
         ListeJoueurs[1].ajouterJeton(g); 
@@ -90,11 +90,11 @@ public class Partie {
     Scanner sc = new Scanner(System.in);
     System.out.println ("Saisissez la colonne : ");
     col = sc.nextInt();
+    col = col -1;
     
-    
-    if (col <= 7 && col >= 1 )
+    if (col <= 6 && col >= 0 )
         {
-                if (grillejeu.colonneRemplie(col-1))
+                if (grillejeu.colonneRemplie(col))
                 {coupValide = true; }
         }
     else 
@@ -113,7 +113,7 @@ public class Partie {
     grillejeu.ajouterJetonDansColonne(j, col); 
     
     joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1] = null ;
-    
+    joueurCourant.nombreJetonsRestants--;
     
     
     // Changement de joueur dans la boucle while
