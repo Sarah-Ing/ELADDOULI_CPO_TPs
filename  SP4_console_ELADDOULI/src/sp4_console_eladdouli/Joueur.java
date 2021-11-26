@@ -29,7 +29,7 @@ public class Joueur
          if (nombreJetonsRestants > ListeJetons.length)
          { return false ;}
          else 
-         {  nombreJetonsRestants += 1;
+         {  nombreJetonsRestants ++ ;
              return true ;}    
         }
     
