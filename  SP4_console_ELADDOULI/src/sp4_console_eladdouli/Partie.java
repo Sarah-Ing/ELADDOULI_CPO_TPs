@@ -12,40 +12,41 @@ import java.util.Scanner;
  */
 public class Partie {
     
-    
-    Joueur ListeJoueurs[] = new Joueur[2];
+// Attributs :
+    Joueur ListeJoueurs[] = new Joueur[2]; // tableau des 2 adversaires 
     Joueur joueurCourant = null;
     Grille grillejeu = new Grille();
     
     
-    
+// Méthodes:   
     public Partie (Joueur joueur1, Joueur joueur2)
     {
     ListeJoueurs[0] = joueur1 ;
     ListeJoueurs[1] = joueur2 ;
     }
             
-    public void attribuerCouleursAuxJoueurs() 
+    public void attribuerCouleursAuxJoueurs() // Prochaine étape : rendre les couleurs random 
     {
     ListeJoueurs[0].affecterCouleur("jaune") ;
     ListeJoueurs[1].affecterCouleur("rouge") ;
     }
+    
     
     public void initialiserPartie()
     {
     grillejeu = new Grille();
     
     for (int i = 0; i <= 21; i++)
-    {
-    Jeton j = new Jeton ("jaune") ;
-    ListeJoueurs[0].ajouterJeton(j); 
-    }
+        {
+        Jeton j = new Jeton ("jaune") ;
+        ListeJoueurs[0].ajouterJeton(j); 
+        }
     
      for (int e = 0; e <= 21; e++)
-    {
-    Jeton g = new Jeton ("rouge") ;
-    ListeJoueurs[1].ajouterJeton(g); 
-    }
+        {
+        Jeton g = new Jeton ("rouge") ;
+        ListeJoueurs[1].ajouterJeton(g); 
+        }
     
     //joueur 
     /*Scanner sc = new Scanner(System.in);
@@ -80,12 +81,12 @@ public class Partie {
             //grilleJeu.ajouterJetonDansColonne(x,col);
         
     boolean coupValide = false; 
-        
+    int col=-1;    
     while (coupValide == false)
     {
     Scanner sc = new Scanner(System.in);
     System.out.println ("Saisissez la colonne : ");
-    int col = sc.nextInt();
+    col = sc.nextInt();
     
     
     if (col <= 7 && col >= 1 )
@@ -101,9 +102,13 @@ public class Partie {
     
     }
     
+    
     //joueurCourant
             
-    Jeton j = joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1]; 
+    Jeton j = joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1];
+    
+    grillejeu.ajouterJetonDansColonne(j, col); 
+    
     joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1] = null ;
     
     
@@ -116,8 +121,6 @@ public class Partie {
             {joueurCourant = ListeJoueurs[0];}
     
     }
-    
-    //Jeton x ;
     
     
     }
