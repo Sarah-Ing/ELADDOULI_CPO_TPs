@@ -35,7 +35,7 @@ public class Cellule {
         {
             return jetonCourant.couleur;
         }
-    else {return "vide";}
+    else {return " vide ";}
     }
 
     
