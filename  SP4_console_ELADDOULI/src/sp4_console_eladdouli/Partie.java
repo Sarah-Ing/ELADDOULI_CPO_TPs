@@ -68,6 +68,7 @@ public class Partie {
     public void debuterPartie()
     
     {
+    grillejeu.afficherGrilleSurConsole();    
         
     joueurCourant = ListeJoueurs[0]; 
     
@@ -78,7 +79,9 @@ public class Partie {
     {
        //Jeton x;
             //x = ListeJoueurs[0].ListeJetons[0];
-            //grilleJeu.ajouterJetonDansColonne(x,col);
+            //grillejeu.ajouterJetonDansColonne(x,col);
+        
+   grillejeu.afficherGrilleSurConsole();     
         
     boolean coupValide = false; 
     int col=-1;    
@@ -122,7 +125,7 @@ public class Partie {
     
     }
     
-    
+    System.out.println("Partie terminée !");
     }
     }
     
