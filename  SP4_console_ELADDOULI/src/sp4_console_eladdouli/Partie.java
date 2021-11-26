@@ -62,16 +62,22 @@ public class Partie {
     
     
     }*/
+    }
     
     public void debuterPartie()
+    
     {
         
     joueurCourant = ListeJoueurs[0]; 
     
-    while (grilleJeu.etreGagnantePourJoueur(ListeJoueurs[0])==false && grilleJeu.etreGagnantePourJoueur(ListeJoueurs[1])== false && grilleJeu.etreRemplie()==false){
-       Jeton x;
-            x = ListeJoueurs[0].ListeJetons[0];
-            grilleJeu.ajouterJetonDansColonne(x,col);
+    while (grillejeu.etreGagnantePourJoueur(ListeJoueurs[0]) == false 
+            && grillejeu.etreGagnantePourJoueur(ListeJoueurs[1]) == false 
+            && grillejeu.etreRemplie() == false)
+    
+    {
+       //Jeton x;
+            //x = ListeJoueurs[0].ListeJetons[0];
+            //grilleJeu.ajouterJetonDansColonne(x,col);
         
     boolean coupValide = false; 
         
@@ -79,7 +85,7 @@ public class Partie {
     {
     Scanner sc = new Scanner(System.in);
     System.out.println ("Saisissez la colonne : ");
-    var col = sc.nextInt();
+    int col = sc.nextInt();
     
     
     if (col <= 7 && col >= 1 )
@@ -95,19 +101,26 @@ public class Partie {
     
     }
     
-    
     //joueurCourant
             
+    Jeton j = joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1]; 
+    joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1] = null ;
     
-    grillejeu.joueurCourant.ListeJetons[i] = grillejeu.joueurCourant.ListeJetons[i-1];
+    
+    
+    // Changement de joueur dans la boucle while
+         if (joueurCourant == ListeJoueurs[0])
+            {joueurCourant = ListeJoueurs[1];}
+    
+         else 
+            {joueurCourant = ListeJoueurs[0];}
     
     }
     
-    
-    
-    Jeton x ;
+    //Jeton x ;
     
     
     }
+    }
     
-}
+
