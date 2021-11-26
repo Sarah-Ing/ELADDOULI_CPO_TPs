@@ -29,10 +29,10 @@ public class Grille {
     {return false;}
     else 
     {
-        for(int i= 5; i>= 0; i++)
+        for(int i= 5; i>= 0; i--)
         {
-            if(CellulesJeu[i][col].jetonCourant == null)
-            {CellulesJeu[i][col].affecterJeton(j);}
+            if(CellulesJeu[i][col].jetonCourant != null)
+            {CellulesJeu[i][col-1].affecterJeton(j);}
         }  return true;
     }
    
@@ -59,9 +59,10 @@ public class Grille {
         for(int i= 0; i<= 5; i++)
        {
            for (int j = 0; j<= 6; j++)
-        System.out.print(" " + CellulesJeu[i][j].lireCouleurDuJeton()+ " ");
+           {System.out.print(" " + CellulesJeu[i][j].lireCouleurDuJeton()+ " ");}
+        System.out.println( "\n");
        }  
-        System.out.println();
+       
     }
     
     public boolean celluleOccupee(int a,int b)
