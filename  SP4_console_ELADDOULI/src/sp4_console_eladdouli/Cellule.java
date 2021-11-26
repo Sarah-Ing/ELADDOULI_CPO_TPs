@@ -77,8 +77,8 @@ public class Cellule {
     
     public boolean activerTrouNoir() 
     {
-    if (trouNoir == false) 
-       {return false;}
+    
+    
    
     if (trouNoir == true)
     { 
@@ -91,7 +91,7 @@ public class Cellule {
         }
     } 
     
-    
+       return false;
     }
             
            
