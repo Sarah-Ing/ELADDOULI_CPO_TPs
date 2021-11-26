@@ -50,17 +50,10 @@ public class Partie {
     
     //joueur 
     /*Scanner sc = new Scanner(System.in);
-    
-    
     Joueur joueur1 = new Joueur(sc.nextLine());
-    
     Joueur joueur2 = new Joueur(sc.nextLine());
-    
     // les mettre dans le tableau
-    
     Jeton jetonj1 = new Jeton() ; // ??
-    
-    
     
     }*/
     }
@@ -68,7 +61,9 @@ public class Partie {
     public void debuterPartie()
     
     {
-    grillejeu.afficherGrilleSurConsole();    
+    grillejeu.afficherGrilleSurConsole(); 
+   
+   attribuerCouleursAuxJoueurs();
         
     joueurCourant = ListeJoueurs[0]; 
     
@@ -126,7 +121,7 @@ public class Partie {
     }
     
     System.out.println("Partie terminée !");
-    }
-    }
+  }
+}
     
 
