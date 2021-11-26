@@ -13,7 +13,7 @@ public class Joueur
     String nom;
     String Couleur;
     Jeton [] ListeJetons = new Jeton[21]; // int ????
-    int nombreJetonsRestants; 
+    int nombreJetonsRestants=0; 
 // nombreJetonsRestants: nombre de jetons restant en possession du joueur, correspondant à la taille effective de ListeJetons
     
     
@@ -29,7 +29,11 @@ public class Joueur
          if (nombreJetonsRestants > ListeJetons.length)
          { return false ;}
          else 
-         {  nombreJetonsRestants ++ ;
+         {  
+         
+         ListeJetons[nombreJetonsRestants]=j;
+         nombreJetonsRestants ++ ;
+                 
              return true ;}    
         }
     
