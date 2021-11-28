@@ -9,6 +9,10 @@ package sp4_console_eladdouli;
  * @author sarah
  */
 public class FenetreDeJeu extends javax.swing.JFrame {
+    
+    Joueur ListeJoueurs[] = new Joueur[2]; // tableau des 2 adversaires 
+    Joueur joueurCourant = null;
+    Grille grillejeu = new Grille();
 
     /**
      * Creates new form FenetreDeJeu
