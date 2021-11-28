@@ -25,7 +25,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         for (int i=5; i>=0; i--)
         {
           for (int j=0; j<7; j++) 
-            {CelluleGraphique cellGraph = new CelluleGraphique(); // 42 cellules graphiques sont crées
+            {CelluleGraphique cellGraph = new CelluleGraphique(grillejeu.CellulesJeu[i][j]); // 42 cellules graphiques sont crées
             panneau_grille.add(cellGraph); // on les ajoute au panneau
             }
         }
