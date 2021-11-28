@@ -14,4 +14,10 @@ public class CelluleGraphique extends JButton {
     
     Cellule celluleAssociee;
     
+    public CelluleGraphique (Cellule uneCellule)
+        {
+         celluleAssociee = uneCellule;
+        }
+    
+    
 }
