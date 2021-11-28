@@ -4,10 +4,14 @@
  */
 package sp4_console_eladdouli;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author sarah
  */
-public class CelluleGraphique {
+public class CelluleGraphique extends JButton {
+    
+    Cellule celluleAssociee;
     
 }
