@@ -15,6 +15,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
      */
     public FenetreDeJeu() {
         initComponents();
+        panneau_Info_Joueurs.setVisible(false);
+        panneau_Info_partie.setVisible(false);
     }
 
     /**
