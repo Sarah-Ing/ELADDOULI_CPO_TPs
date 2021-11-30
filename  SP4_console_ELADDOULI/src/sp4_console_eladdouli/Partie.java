@@ -4,6 +4,7 @@
  */
 package sp4_console_eladdouli;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -27,14 +28,49 @@ public class Partie {
             
     public void attribuerCouleursAuxJoueurs() // Prochaine étape : rendre les couleurs random 
     {
-    ListeJoueurs[0].affecterCouleur("jaune") ;
+    ListeJoueurs[0].affecterCouleur("jaune") ; 
     ListeJoueurs[1].affecterCouleur("rouge") ;
     }
     
     
     public void initialiserPartie()
     {
-    grillejeu = new Grille();
+    grillejeu = new Grille(); // initialisation de la grille
+    
+    //joueur 
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Choix du nom de J1 : ");
+    Joueur joueur1 = new Joueur(sc.nextLine());
+    
+    System.out.println("Choix du nom de J2 : ");
+    Joueur joueur2 = new Joueur(sc.nextLine());
+    
+    ListeJoueurs[0] = joueur1 ;
+    ListeJoueurs[1] = joueur2 ;
+    
+    attribuerCouleursAuxJoueurs();
+
+System.out.println(joueur1.nom + " est de couleur  " + joueur1.Couleur );
+System.out.println(joueur2.nom + " est de couleur  " + joueur2.Couleur );
+    
+    
+        
+        Random r = new Random();
+        
+        for (int i = 0 ; i < 5; i++)
+
+	{
+		int ligneTrouNoir = r.nextInt(6);
+		int colTrouNoir = r.nextInt(7); 
+                
+                if (!grillejeu.placerTrouNoir(ligneTrouNoir, colTrouNoir))
+			{i --;}
+	} 
+
+        grillejeu.afficherGrilleSurConsole();
+
+
+
     
     for (int i = 0; i < 21; i++)
         {
@@ -48,14 +84,7 @@ public class Partie {
         ListeJoueurs[1].ajouterJeton(g); 
         }
     
-    //joueur 
-    /*Scanner sc = new Scanner(System.in);
-    Joueur joueur1 = new Joueur(sc.nextLine());
-    Joueur joueur2 = new Joueur(sc.nextLine());
-    // les mettre dans le tableau
-    Jeton jetonj1 = new Jeton() ; // ??
     
-    }*/
     }
     
     public void debuterPartie()
@@ -72,9 +101,6 @@ public class Partie {
             && grillejeu.etreRemplie() == false)
     
     {
-       //Jeton x;
-            //x = ListeJoueurs[0].ListeJetons[0];
-            //grillejeu.ajouterJetonDansColonne(x,col);
         
    grillejeu.afficherGrilleSurConsole();     
         
@@ -122,6 +148,10 @@ public class Partie {
     
     System.out.println("Partie terminée !");
   }
+    
+    
+   
+    
 }
     
 
