@@ -14,7 +14,6 @@ public class Lights_out_GOMEZ_EL_ADDOULI {
      * @param args the command line arguments
      */
     public static void main(String[] args) 
-    
     {
         
     }
