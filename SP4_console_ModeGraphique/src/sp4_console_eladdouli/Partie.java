@@ -5,7 +5,7 @@
 package sp4_console_eladdouli;
 
 import java.util.Scanner;
-
+import java.util.Random;
 /**
  *
  * @author sarah
@@ -84,6 +84,12 @@ public class Partie {
 		joueurCourant = ListeJoueurs[0];
 	}
        else {joueurCourant = ListeJoueurs[1];}
+        
+        
+        
+        
+        grillejeu.afficherGrilleSurConsole();
+        
     
     //________________________________________//
     /*  for (int i = 0; i < 21; i++)
