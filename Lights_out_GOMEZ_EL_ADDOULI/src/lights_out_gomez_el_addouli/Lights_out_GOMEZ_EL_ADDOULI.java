@@ -16,7 +16,7 @@ public class Lights_out_GOMEZ_EL_ADDOULI {
     public static void main(String[] args) 
     {
         
-        
+      
     }
     
 }
