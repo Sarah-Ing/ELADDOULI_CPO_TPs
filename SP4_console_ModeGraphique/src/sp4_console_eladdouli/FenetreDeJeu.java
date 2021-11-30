@@ -233,6 +233,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panneau_Info_Joueurs.setVisible(true);
         panneau_Info_partie.setVisible(true);
         initialiserPartie();
+        panneau_grille.repaint();
         
        
     }//GEN-LAST:event_btn_startActionPerformed
