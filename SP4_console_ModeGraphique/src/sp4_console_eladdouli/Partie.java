@@ -27,16 +27,66 @@ public class Partie {
             
     public void attribuerCouleursAuxJoueurs() // Prochaine étape : rendre les couleurs random 
     {
-    ListeJoueurs[0].affecterCouleur("jaune") ;
-    ListeJoueurs[1].affecterCouleur("rouge") ;
+    Random r = new Random();
+    boolean couleur;
+    couleur = r.nextBoolean();
+
+    if (couleur) 
+    {
+	ListeJoueurs[0].Couleur = "Rouge";
+	ListeJoueurs[1].Couleur = "Jaune";
+    }
+    else
+    {
+	ListeJoueurs[0].Couleur = "Jaune";
+	ListeJoueurs[1].Couleur = "Rouge";
+    }  
+        
+        
+   /* ListeJoueurs[0].affecterCouleur("jaune") ;
+    ListeJoueurs[1].affecterCouleur("rouge") ;*/
     }
     
     
     public void initialiserPartie()
     {
-    grillejeu = new Grille();
+    grillejeu = new Grille(); // initialisation de la grille
     
-    for (int i = 0; i < 21; i++)
+    // Création des 2 joueurs
+    // RAJOUTER POUR POUVOIR AVANCER LE MODE GRAPHIQUE
+    Scanner sc = new Scanner(System.in) ;
+    System.out.println("Choix du nom de J1 : ");
+    Joueur J1 = new Joueur(sc.nextLine());
+    System.out.println("Choix du nom de J2 : ");
+    Joueur J2 = new Joueur(sc.nextLine());
+    ListeJoueurs[0] = J1 ;
+    ListeJoueurs[1] = J2 ;
+    
+    
+    attribuerCouleursAuxJoueurs();
+
+    System.out.println(J1.nom + "est de couleur " + J1.Couleur );
+    System.out.println(J2.nom + "est de couleur " + J2.Couleur );
+
+    // On attribue 21 jetons à chaque joueur
+    for (int i = 0 ; i < 21; i++)
+	{
+		J1.ajouterJeton(new Jeton(J1.Couleur));
+		J2.ajouterJeton(new Jeton(J2.Couleur));
+	}
+
+// Joueur qui fait l’action en premier
+        Random r = new Random();
+        boolean le_premier = r.nextBoolean();
+
+        if (le_premier)
+	{
+		joueurCourant = ListeJoueurs[0];
+	}
+       else {joueurCourant = ListeJoueurs[1];}
+    
+    //________________________________________//
+    /*  for (int i = 0; i < 21; i++)
         {
         Jeton j = new Jeton ("jaune") ;
         ListeJoueurs[0].ajouterJeton(j); 
@@ -47,7 +97,7 @@ public class Partie {
         Jeton g = new Jeton ("rouge") ;
         ListeJoueurs[1].ajouterJeton(g); 
         }
-    
+    */
     //joueur 
     /*Scanner sc = new Scanner(System.in);
     Joueur joueur1 = new Joueur(sc.nextLine());
