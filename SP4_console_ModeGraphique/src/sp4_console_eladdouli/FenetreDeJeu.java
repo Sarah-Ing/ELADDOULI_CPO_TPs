@@ -187,6 +187,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(btn_col_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         btn_col_1.setText("2");
+        btn_col_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col_1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         btn_col_2.setText("3");
@@ -206,12 +211,27 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(btn_col_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         btn_col_4.setText("5");
+        btn_col_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col_4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, -1));
 
         btn_col_5.setText("6");
+        btn_col_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col_5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, -1));
 
         btn_col_6.setText("7");
+        btn_col_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_col_6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_col_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
 
         setBounds(0, 0, 1030, 693);
@@ -221,6 +241,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_col_0ActionPerformed
 
+    
+    
+    
     private void btn_col_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_col_2ActionPerformed
@@ -234,9 +257,25 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         panneau_Info_partie.setVisible(true);
         initialiserPartie();
         panneau_grille.repaint();
-        
+        btn_start.setEnabled(false);
        
     }//GEN-LAST:event_btn_startActionPerformed
+
+    private void btn_col_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_col_1ActionPerformed
+
+    private void btn_col_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_col_4ActionPerformed
+
+    private void btn_col_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_col_5ActionPerformed
+
+    private void btn_col_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_col_6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +335,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     System.out.println(J1.nom + " est de couleur " + J1.Couleur );
     System.out.println(J2.nom + " est de couleur " + J2.Couleur );
+    
+    lbl_J1_nom.setText(nomJoueur1);
+    lbl_J2_nom1.setText(nomJoueur2);
+    
+    lbl_J1_couleur.setText(J1.Couleur);
+    lbl_J2_couleur.setText(J2.Couleur);
+    
+    
+    //lbl_J1_desint.setText(J1.nombreDesintegrateurs+"");
+    //lbl_J2_desint.setText(J2.nombreDesintegrateurs+"");
 
     // On attribue 21 jetons à chaque joueur
     for (int i = 0 ; i < 21; i++)
@@ -314,7 +363,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 	}
        else {joueurCourant = ListeJoueurs[1];}
         
+        lbl_Jcourant.setText(joueurCourant.nom);
         }
+    
+    
 
     
     public void attribuerCouleursAuxJoueurs() // Prochaine étape : rendre les couleurs random 
