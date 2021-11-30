@@ -95,8 +95,6 @@ public class Cellule {
        return false;
     }
             
-           
-            
-    
+          
     
 }
