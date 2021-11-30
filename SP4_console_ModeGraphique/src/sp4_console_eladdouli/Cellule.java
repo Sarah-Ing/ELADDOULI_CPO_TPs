@@ -31,11 +31,12 @@ public class Cellule {
     
     public String lireCouleurDuJeton() 
     {
-    if(jetonCourant != null)
+    if(jetonCourant == null)
         {
-            return jetonCourant.couleur;
+            return " vide ";
+            
         }
-    else {return " vide ";}
+    return jetonCourant.couleur;
     }
 
     

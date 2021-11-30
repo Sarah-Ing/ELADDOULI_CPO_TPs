@@ -38,6 +38,10 @@ public class Grille {
 return true;
     }
 
+    
+    
+    
+    
     public boolean etreRemplie() {
         for (int j = 0; j <= 6; j++) {
             if (CellulesJeu[0][j].jetonCourant == null) {
