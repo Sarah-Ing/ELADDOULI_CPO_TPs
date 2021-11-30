@@ -152,7 +152,18 @@ return true;
         return false;
     }
 
-    //public boolean placerTrouNoir(int, int){}
+    public boolean placerTrouNoir(int ligne, int col)
+    
+    {
+        if (CellulesJeu[ligne][col].trouNoir == true) { // trou noir déja présent 
+            return false; // on ne peut pas mettre de trouNoir
+        }
+
+        return true;// si la cellule est vide on peut mettre un trou noir
+    }
+    
+    
+    
     //public boolean placerDesintegrateur(int, int){}
     // public boolean supprimerJeton(int, int){}
     //public boolean recupererJeton(int, int){}
