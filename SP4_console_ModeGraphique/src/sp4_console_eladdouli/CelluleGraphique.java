@@ -32,6 +32,29 @@ public class CelluleGraphique extends JButton {
     public void paintComponent (Graphics G)
     {
         super.paintComponent(G);
-        setIcon(img_vide); // on attribue l'image celluleVide.png
+        if (celluleAssociee.presenceTrouNoir()==true)
+        {
+        setIcon(img_trouNoir);
+        }
+        //else if (celluleAssociee.presenceDesintegrateur()==true)
+       // {
+        //setIcon(img_desint);
+        //}
+        else {
+        String couleur_jeton = celluleAssociee.lireCouleurDuJeton();
+        switch (couleur_jeton)
+        {case " vide " : 
+            setIcon(img_vide); // on attribue l'image celluleVide.png
+            break;
+        case "Rouge" :
+            setIcon(img_jetonRouge);
+            break;
+        case "Jaune" :
+            setIcon(img_jetonJaune);
+            break;}
+        }
+            
+            
+        
     }
 }
