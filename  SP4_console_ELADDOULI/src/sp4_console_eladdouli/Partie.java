@@ -70,7 +70,6 @@ System.out.println(joueur2.nom + " est de couleur  " + joueur2.Couleur );
         grillejeu.afficherGrilleSurConsole();
 
 
-
     
     for (int i = 0; i < 21; i++)
         {
