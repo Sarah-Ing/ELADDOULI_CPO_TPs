@@ -22,7 +22,22 @@ public class Grille {
         }
     }
 
-    public boolean ajouterJetonDansColonne(Jeton j, int col) {
+    boolean ajouterJetonDansColonne(Joueur joueurCourant, int ind_colonne)
+
+    {   
+    if (colonneRemplie(ind_colonne)) return false;
+
+        int i = 0;
+    while(CellulesJeu[i][ind_colonne].jetonCourant!= null)
+    {i++;}
+
+    //Jeton un_jeton = joueurCourant.retireJeton();
+
+    //CellulesJeu[i][ind_colonne].jetonCourant = un_jeton;
+    return true;}
+    
+    
+   /* public boolean ajouterJetonDansColonne(Jeton j, int col) {
         if (CellulesJeu[0][col].jetonCourant != null) {
             return false;
         } else {
@@ -37,7 +52,7 @@ public class Grille {
         }
 return true;
     }
-
+*/
     
     
     
@@ -150,7 +165,7 @@ return true;
 
     //public void tasserGrille(int){}
     public boolean colonneRemplie(int j) {
-        if (CellulesJeu[0][j] != null) {
+        if (CellulesJeu[0][j].jetonCourant != null) {
             return true;
         }
         return false;
