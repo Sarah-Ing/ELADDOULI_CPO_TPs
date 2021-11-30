@@ -53,8 +53,6 @@ public class CelluleGraphique extends JButton {
             setIcon(img_jetonJaune);
             break;}
         }
-            
-            
-        
+           
     }
 }
