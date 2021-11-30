@@ -31,6 +31,8 @@ public class Grille {
     while(CellulesJeu[i][ind_colonne].jetonCourant!= null)
     {i++;}
 
+    
+    
     //Jeton un_jeton = joueurCourant.retireJeton();
 
     //CellulesJeu[i][ind_colonne].jetonCourant = un_jeton;
