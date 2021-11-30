@@ -4,6 +4,9 @@
  */
 package sp4_console_eladdouli;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author sarah
@@ -229,6 +232,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
         panneau_Info_Joueurs.setVisible(true);
         panneau_Info_partie.setVisible(true);
+        initialiserPartie();
+        
+       
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -265,7 +271,68 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    public void initialiserPartie()
+    {
+    grillejeu = new Grille(); // initialisation de la grille
+    
+    // Création des 2 joueurs
+    // RAJOUTER POUR POUVOIR AVANCER LE MODE GRAPHIQUE
+    
+    
+    String nomJoueur1 = nom_joueur1.getText();
+    Joueur J1 = new Joueur(nomJoueur1);
+    
+    String nomJoueur2 = nom_joueur2.getText();
+    Joueur J2 = new Joueur(nomJoueur2);
+    
+    ListeJoueurs[0] = J1 ;
+    ListeJoueurs[1] = J2 ;
+    
+    
+    attribuerCouleursAuxJoueurs();
 
+    System.out.println(J1.nom + " est de couleur " + J1.Couleur );
+    System.out.println(J2.nom + " est de couleur " + J2.Couleur );
+
+    // On attribue 21 jetons à chaque joueur
+    for (int i = 0 ; i < 21; i++)
+	{
+		J1.ajouterJeton(new Jeton(J1.Couleur));
+		J2.ajouterJeton(new Jeton(J2.Couleur));
+	}
+
+// Joueur qui fait l’action en premier
+        Random r = new Random();
+        boolean le_premier = r.nextBoolean();
+
+        if (le_premier)
+	{
+		joueurCourant = ListeJoueurs[0];
+	}
+       else {joueurCourant = ListeJoueurs[1];}
+        
+        }
+
+    
+    public void attribuerCouleursAuxJoueurs() // Prochaine étape : rendre les couleurs random 
+    {
+    Random r = new Random();
+    boolean couleur;
+    couleur = r.nextBoolean();
+
+    if (couleur) 
+    {
+	ListeJoueurs[0].Couleur = "Rouge";
+	ListeJoueurs[1].Couleur = "Jaune";
+    }
+    else
+    {
+	ListeJoueurs[0].Couleur = "Jaune";
+	ListeJoueurs[1].Couleur = "Rouge";
+    } 
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_col_0;
     private javax.swing.JButton btn_col_1;
