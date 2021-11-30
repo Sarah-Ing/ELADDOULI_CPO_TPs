@@ -17,6 +17,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     Joueur joueurCourant = null;
     Grille grillejeu = new Grille();
 
+    
     /**
      * Creates new form FenetreDeJeu
      */
