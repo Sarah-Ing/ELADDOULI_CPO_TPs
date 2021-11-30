@@ -239,6 +239,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void btn_col_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_0ActionPerformed
         // TODO add your handling code here:
+        joueurDansColonne(0);
         joueurSuivant();
     }//GEN-LAST:event_btn_col_0ActionPerformed
 
@@ -247,11 +248,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     private void btn_col_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_2ActionPerformed
         // TODO add your handling code here:
+         joueurDansColonne(2);
         joueurSuivant();
     }//GEN-LAST:event_btn_col_2ActionPerformed
 
     private void btn_col_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_3ActionPerformed
         // TODO add your handling code here:
+         joueurDansColonne(3);
         joueurSuivant();
     }//GEN-LAST:event_btn_col_3ActionPerformed
 
@@ -266,24 +269,31 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void btn_col_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_1ActionPerformed
         // TODO add your handling code here:
+         joueurDansColonne(1);
         joueurSuivant();
     }//GEN-LAST:event_btn_col_1ActionPerformed
 
     private void btn_col_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_4ActionPerformed
         // TODO add your handling code here:
+         joueurDansColonne(4);
         joueurSuivant();
     }//GEN-LAST:event_btn_col_4ActionPerformed
 
     private void btn_col_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_5ActionPerformed
         // TODO add your handling code here:
+         joueurDansColonne(5);
         joueurSuivant();
     }//GEN-LAST:event_btn_col_5ActionPerformed
 
     private void btn_col_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_col_6ActionPerformed
         // TODO add your handling code here:
+         joueurDansColonne(6);
         joueurSuivant();
     }//GEN-LAST:event_btn_col_6ActionPerformed
 
+    public boolean joueurDansColonne(int indice_colonne)
+    {return true;}
+    
     public void joueurSuivant()
     {
     if (joueurCourant == ListeJoueurs[0])
