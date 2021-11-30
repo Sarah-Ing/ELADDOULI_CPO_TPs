@@ -18,6 +18,7 @@ public class Partie {
     Grille grillejeu = new Grille();
     
     
+    
 // Méthodes:   
     public Partie (Joueur joueur1, Joueur joueur2)
     {
