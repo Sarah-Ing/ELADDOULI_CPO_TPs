@@ -356,7 +356,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     grillejeu = new Grille(); // initialisation de la grille
     
     // Création des 2 joueurs
-    // RAJOUTER POUR POUVOIR AVANCER LE MODE GRAPHIQUE
+    // RAJOUTE POUR POUVOIR AVANCER LE MODE GRAPHIQUE
     
     
     String nomJoueur1 = nom_joueur1.getText();
