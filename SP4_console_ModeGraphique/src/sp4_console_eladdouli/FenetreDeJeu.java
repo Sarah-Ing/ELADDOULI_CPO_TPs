@@ -292,7 +292,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_col_6ActionPerformed
 
     public boolean joueurDansColonne(int indice_colonne)
-    {return true;}
+    { boolean resultatAction;
+
+
+        resultatAction = grillejeu.ajouterJetonDansColonne(joueurCourant, indice_colonne);
+        
+        panneau_grille.repaint();
+        if(resultatAction == true) 
+            return true;
+
+        else return false; 
+
+    
+    }
     
     public void joueurSuivant()
     {
