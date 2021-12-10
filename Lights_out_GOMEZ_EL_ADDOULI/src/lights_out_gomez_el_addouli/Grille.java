@@ -36,7 +36,7 @@ public Grille()
                  System.out.print(" light ");
              }
             if (Case[i][j].Etat == false){
-                System.out.print(" dark ");
+                System.out.print("  dark  ");
             }
          }
          System.out.println("\n");

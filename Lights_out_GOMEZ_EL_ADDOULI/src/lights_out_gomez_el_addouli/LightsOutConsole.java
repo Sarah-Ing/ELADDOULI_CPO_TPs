@@ -11,10 +11,12 @@ package lights_out_gomez_el_addouli;
 public class LightsOutConsole {
     public static void main(String args[]) {
         
-        Grille GrilleJeu = new Grille(); 
-        GrilleJeu.GrilleSurConsole();
+        // Grille GrilleJeu = new Grille();
+       // GrilleJeu.GrilleSurConsole();
         
+        Partie P = new Partie();
         
+        P.DebuterPartie();
         
     }
     
