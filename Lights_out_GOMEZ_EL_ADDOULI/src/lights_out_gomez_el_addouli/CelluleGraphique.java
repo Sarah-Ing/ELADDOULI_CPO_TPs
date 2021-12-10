@@ -11,10 +11,10 @@ package lights_out_gomez_el_addouli;
 public class CelluleGraphique {
     
     
-    Grille CelluleAssociee;
+   // Grille CelluleAssociee;
     
     public CelluleGraphique(Grille uneCellule){
-            CelluleAssociee = uneCellule;
+          //  CelluleAssociee = uneCellule;
     }
     
 }
