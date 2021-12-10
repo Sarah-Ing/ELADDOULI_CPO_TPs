@@ -18,6 +18,7 @@ public class Partie {
     Grille grillejeu = new Grille();
     
     
+    
 // Méthodes:   
     public Partie (Joueur joueur1, Joueur joueur2)
     {
@@ -25,7 +26,7 @@ public class Partie {
     ListeJoueurs[1] = joueur2 ;
     }
             
-    public void attribuerCouleursAuxJoueurs() // Prochaine étape : rendre les couleurs random 
+    public void attribuerCouleursAuxJoueurs() 
     {
     Random r = new Random();
     boolean couleur;
@@ -161,7 +162,7 @@ public class Partie {
             
     Jeton j = joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1];
     
-    grillejeu.ajouterJetonDansColonne(j, col); 
+    grillejeu.ajouterJetonDansColonne(joueurCourant, col); // Modifications ICI 
     
     joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1] = null ;
     joueurCourant.nombreJetonsRestants--;

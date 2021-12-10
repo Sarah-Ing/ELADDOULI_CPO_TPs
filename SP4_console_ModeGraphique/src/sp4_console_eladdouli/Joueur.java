@@ -39,7 +39,6 @@ public class Joueur
     
     /*obtenirDesintegrateur()
         {;}
-    
     utiliserDesintegrateur()
         {;}
     */
