@@ -4,10 +4,37 @@
  */
 package lights_out_gomez_el_addouli;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Natha
  */
 public class Partie {
     
+    Grille GrilleJeu = new Grille();
+    
+    public void DebuterPartie(){
+        GrilleJeu.GrilleSurConsole();
+        int ligne =-1;
+        int col = -1;
+        while (ligne <0 || ligne >4){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Saisissez le numéro de la ligne : (entre 1 et 5)");
+            ligne  = sc.nextInt();
+            ligne = ligne-1;
+           
+        }
+        while (col <0 || col >4){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Saisissez le numéro de la colonne : (entre 1 et 5)");
+            col  = sc.nextInt();
+            col = col-1;
+           
+        }
+     GrilleJeu.SwitchEtat(ligne , col);
+     GrilleJeu.GrilleSurConsole();
+        
+        
+    }
 }
