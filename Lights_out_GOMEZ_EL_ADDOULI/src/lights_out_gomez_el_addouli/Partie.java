@@ -19,7 +19,7 @@ public class Partie {
     public void DebuterPartie(){
         GrilleJeu.GrilleSurConsole();
         
-       while(GrilleJeu.GrilleAllumee()== false){
+       while(GrilleJeu.GrilleEteinte()== false){
         
         int ligne =-1;
         int col = -1;
@@ -94,5 +94,6 @@ public class Partie {
     
      GrilleJeu.GrilleSurConsole();   
        }
+       System.out.println("Bravo vous avez gagné !");
     }
 }

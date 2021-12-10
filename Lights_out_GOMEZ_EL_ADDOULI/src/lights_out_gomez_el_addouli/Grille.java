@@ -52,13 +52,13 @@ public Grille()
      }
  }
  
- public boolean GrilleAllumee()
+ public boolean GrilleEteinte()
  { boolean test = false;
  
      for (int i=0; i<5 ; i++){
         for (int j=0; j<5 ; j++)
           {
-            if(Case[i][j].Etat == true)
+            if(Case[i][j].Etat == false)
                 {test = true;}
             else
                 {test = false;}
