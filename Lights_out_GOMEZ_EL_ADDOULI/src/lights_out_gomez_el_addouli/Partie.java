@@ -36,20 +36,20 @@ public class Partie {
         if (col == 0 ){
             GrilleJeu.SwitchEtat(ligne , col +1);
             if (ligne != 0){
-                GrilleJeu.SwitchEtat(ligne +1, col);
+                GrilleJeu.SwitchEtat(ligne -1, col);
             }
             if (ligne != 4){
-               GrilleJeu.SwitchEtat(ligne -1, col);
+               GrilleJeu.SwitchEtat(ligne +1, col);
             }
         }
         if (col== 4 ){
             GrilleJeu.SwitchEtat(ligne , col -1);
         
             if (ligne != 0){
-                GrilleJeu.SwitchEtat(ligne +1, col);
+                GrilleJeu.SwitchEtat(ligne -1, col);
             }
             if (ligne != 4){
-               GrilleJeu.SwitchEtat(ligne -1, col);
+               GrilleJeu.SwitchEtat(ligne +1, col);
             }
         }
         
@@ -84,7 +84,7 @@ public class Partie {
             GrilleJeu.SwitchEtat(ligne +1, col);
         }
      
-     GrilleJeu.SwitchEtat(ligne , col-1);
+     
      
     
      GrilleJeu.GrilleSurConsole();   
