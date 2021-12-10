@@ -17,6 +17,8 @@ boolean test; // Si le boolean est true , la case est allumé, sinon elle est é
 
 // Méthodes :
 
+
+
 public Grille()
     {
         Case = new Cellules[5][5];
