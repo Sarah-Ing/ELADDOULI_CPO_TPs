@@ -32,9 +32,20 @@ public class Partie {
             col = col-1;
            
         }
+        
+        if (col == 0 ){
+            
+        }
      GrilleJeu.SwitchEtat(ligne , col);
-     GrilleJeu.GrilleSurConsole();
-        
-        
+     GrilleJeu.SwitchEtat(ligne +1, col);
+     GrilleJeu.SwitchEtat(ligne -1, col);
+     GrilleJeu.SwitchEtat(ligne , col +1);
+     GrilleJeu.SwitchEtat(ligne , col-1);
+     
+     
+     
+     
+     GrilleJeu.GrilleSurConsole();   
+     
     }
 }
