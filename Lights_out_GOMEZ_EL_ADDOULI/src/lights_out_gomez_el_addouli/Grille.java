@@ -47,10 +47,26 @@ public Grille()
      if (Case[Ligne][Col].Etat == true){
          Case[Ligne][Col].Etat = false;
      }
-     if (Case[Ligne][Col].Etat == false){
+     else if (Case[Ligne][Col].Etat == false){
          Case[Ligne][Col].Etat = true;
      }
  }
+ 
+ public boolean GrilleAllumee()
+ { boolean test = false;
+ 
+     for (int i=0; i<5 ; i++){
+        for (int j=0; j<5 ; j++)
+          {
+            if(Case[i][j].Etat == true)
+                {test = true;}
+            else
+                {test = false;}
+           }
+ }
+        return test;
+ }
+ 
  
  
 }

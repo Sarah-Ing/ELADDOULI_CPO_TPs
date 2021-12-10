@@ -14,8 +14,13 @@ public class Partie {
     
     Grille GrilleJeu = new Grille();
     
+    
+    
     public void DebuterPartie(){
         GrilleJeu.GrilleSurConsole();
+        
+       while(GrilleJeu.GrilleAllumee()== false){
+        
         int ligne =-1;
         int col = -1;
         while (ligne <0 || ligne >4){
@@ -75,7 +80,7 @@ public class Partie {
           
         }
         
-        if (col != 0 && col != 4){
+        if (col != 0 && col != 4){ // Cas général
             GrilleJeu.SwitchEtat(ligne, col +1);
             GrilleJeu.SwitchEtat(ligne , col -1);
         }
@@ -88,6 +93,6 @@ public class Partie {
      
     
      GrilleJeu.GrilleSurConsole();   
-     
+       }
     }
 }
