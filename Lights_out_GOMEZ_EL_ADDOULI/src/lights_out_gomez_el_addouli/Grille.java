@@ -31,7 +31,13 @@ public Grille()
  void GrilleSurConsole(){
      for (int i=0 ; i<5 ; i++){
          for (int j=0 ; j<5 ; j++){
-             System.out.print(Case[i][j]);
+             
+             if (Case[i][j].Etat == true){ // on allume la cellule
+                 System.out.print(" light ");
+             }
+            if (Case[i][j].Etat == false){
+                System.out.print(" dark ");
+            }
          }
          System.out.println("\n");
      }
