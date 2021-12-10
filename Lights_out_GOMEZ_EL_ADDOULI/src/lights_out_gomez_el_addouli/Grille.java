@@ -41,6 +41,16 @@ public Grille()
          }
          System.out.println("\n");
      }
-    
 }
+ 
+ public void SwitchEtat(int Ligne , int Col){
+     if (Case[Ligne][Col].Etat == true){
+         Case[Ligne][Col].Etat = false;
+     }
+     if (Case[Ligne][Col].Etat == false){
+         Case[Ligne][Col].Etat = true;
+     }
+ }
+ 
+ 
 }
