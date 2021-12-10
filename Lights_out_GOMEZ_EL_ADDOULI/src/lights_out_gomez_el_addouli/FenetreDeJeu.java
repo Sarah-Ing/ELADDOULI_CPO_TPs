@@ -10,12 +10,27 @@ package lights_out_gomez_el_addouli;
  * lights_out_gomez_el_addouli;
  */
 public class FenetreDeJeu extends javax.swing.JFrame {
+    
+    Grille GrilleJeu = new Grille();
 
     /**
      * Creates new form FenetreDeJeu
      */
     public FenetreDeJeu() {
         initComponents();
+        
+        
+        for (int i=4; i>=0; i--){
+            for (int j=0; j<=4; j++){
+                CelluleGraphique CellGraph = new CelluleGraphique(GrilleJeu.GrilleJeu[i][j]);
+                Panneau_Grille.add(CellGraph);
+                
+                
+            }
+        }
+        //Panneau_Grille.add(GrilleJeu);
+        
+        
     }
 
     /**
@@ -27,25 +42,25 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        Panneau_Grille = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 51));
+        Panneau_Grille.setBackground(new java.awt.Color(204, 255, 204));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Panneau_GrilleLayout = new javax.swing.GroupLayout(Panneau_Grille);
+        Panneau_Grille.setLayout(Panneau_GrilleLayout);
+        Panneau_GrilleLayout.setHorizontalGroup(
+            Panneau_GrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 510, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Panneau_GrilleLayout.setVerticalGroup(
+            Panneau_GrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 360, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 510, 360));
+        getContentPane().add(Panneau_Grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 510, 360));
 
         setBounds(0, 0, 764, 472);
     }// </editor-fold>//GEN-END:initComponents
@@ -53,7 +68,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void _main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -86,6 +101,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel Panneau_Grille;
     // End of variables declaration//GEN-END:variables
 }

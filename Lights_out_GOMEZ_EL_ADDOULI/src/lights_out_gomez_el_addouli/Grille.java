@@ -12,12 +12,29 @@ public class Grille
 {
  // Attributs :
 
-Grille[][] GrilleJeu = new Grille[5][5];
+Cellules Case[][];
+boolean test; // Si le boolean est true , la case est allumé, sinon elle est éteinte 
 
 // Méthodes :
 
 public Grille()
     {
+        Case = new Cellules[5][5];
+        for (int i=0; i<5 ; i++){
+            for (int j=0; j<5 ; j++){
+                Case[i][j] = new Cellules ;
+            }
+        }
         
     }
+
+ void GrilleSurConsole(){
+     for (int i=0 ; i<5 ; i++){
+         for (int j=0 ; j<5 ; j++){
+             System.out.print(Case[i][j]);
+         }
+         System.out.println("\n");
+     }
+    
+}
 }

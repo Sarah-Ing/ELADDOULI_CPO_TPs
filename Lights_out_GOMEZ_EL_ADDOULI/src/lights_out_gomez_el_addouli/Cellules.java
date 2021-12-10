@@ -10,6 +10,11 @@ package lights_out_gomez_el_addouli;
  */
 public class Cellules {
     
+    boolean Etat;
     
+    
+    public Cellules(){
+        Etat = false;
+    }
     
 }

@@ -12,5 +12,6 @@ public class LightsOutConsole {
     public static void main(String args[]) {
     }
     
+    Grille GrilleJeu = new Grille(); 
     
 }
