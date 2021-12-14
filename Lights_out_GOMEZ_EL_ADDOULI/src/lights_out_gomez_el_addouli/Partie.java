@@ -19,7 +19,7 @@ public class Partie {
     public void DebuterPartie(){
         GrilleJeu.GrilleSurConsole();
         
-       while(GrilleJeu.GrilleEteinte()== false){
+       while(GrilleJeu.GrilleEteinte()== true){
         
         int ligne =-1;
         int col = -1;
