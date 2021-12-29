@@ -55,14 +55,12 @@ public Grille()
  }
  
  public boolean GrilleEteinte()
- { boolean test = false;
+ { boolean test = true ;
  
      for (int i=0; i<5 ; i++){
         for (int j=0; j<5 ; j++)
           {
-            if(Case[i][j].Etat == false)
-                {test = true;}
-            else
+            if(Case[i][j].Etat == true)
                 {test = false;}
            }
  }
