@@ -16,6 +16,7 @@ public class LightsOutConsole {
         
         Partie P = new Partie();
         
+        P.InitialiserPartie();
         P.DebuterPartie();
         
     }

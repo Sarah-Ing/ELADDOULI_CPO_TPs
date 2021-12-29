@@ -4,6 +4,7 @@
  */
 package lights_out_gomez_el_addouli;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -14,12 +15,20 @@ public class Partie {
     
     Grille GrilleJeu = new Grille();
     
-    
+    public void InitialiserPartie(){
+        Random nbAleatoire = new Random();
+        int CaseDeb = 1+nbAleatoire.nextInt(12);
+        for(int i=0; i<=CaseDeb ; i++){
+            int ligneAlea = nbAleatoire.nextInt(4);
+            int ColAlea = nbAleatoire.nextInt(4);
+            GrilleJeu.SwitchEtat(ligneAlea ,ColAlea);
+        }
+    }
     
     public void DebuterPartie(){
         GrilleJeu.GrilleSurConsole();
         
-       while(GrilleJeu.GrilleEteinte()== true){
+       while(GrilleJeu.GrilleEteinte()== false){
         
         int ligne =-1;
         int col = -1;
