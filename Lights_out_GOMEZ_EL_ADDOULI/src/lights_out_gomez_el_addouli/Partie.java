@@ -40,58 +40,48 @@ public class Partie {
         GrilleJeu.SwitchEtat(ligne , col);
         if (col == 0 ){
             GrilleJeu.SwitchEtat(ligne , col +1);
-            if (ligne != 0){
-                GrilleJeu.SwitchEtat(ligne -1, col);
+            if (ligne == 0){
+                GrilleJeu.SwitchEtat(ligne +1, col);
             }
-            if (ligne != 4){
-               GrilleJeu.SwitchEtat(ligne +1, col);
-            }
-        }
-        if (col== 4 ){
-            GrilleJeu.SwitchEtat(ligne , col -1);
-        
-            if (ligne != 0){
-                GrilleJeu.SwitchEtat(ligne -1, col);
-            }
-            if (ligne != 4){
-               GrilleJeu.SwitchEtat(ligne +1, col);
-            }
-        }
-        
-        if (ligne == 4){
+            else if (ligne == 4){
                GrilleJeu.SwitchEtat(ligne -1, col);
-               if (col != 0){
-                   GrilleJeu.SwitchEtat(ligne , col-1);
-               }
-               if (col != 4){
-                   GrilleJeu.SwitchEtat(ligne , col+1);
-               }
-       
-        }
-        
-        if (ligne== 0){
-            GrilleJeu.SwitchEtat(ligne +1, col);
-            if (col != 0){
-                GrilleJeu.SwitchEtat(ligne , col-1);
             }
-            if (col !=4){
-                GrilleJeu.SwitchEtat(ligne , col+1);
+            else {
+                GrilleJeu.SwitchEtat(ligne-1,col);
+                GrilleJeu.SwitchEtat(ligne+1,col);
             }
-          
         }
-        
-        if (col != 0 && col != 4){ // Cas général
-            GrilleJeu.SwitchEtat(ligne, col +1);
+        else if (col== 4 ){
             GrilleJeu.SwitchEtat(ligne , col -1);
+        
+            if (ligne == 0){
+                GrilleJeu.SwitchEtat(ligne +1, col);
+            }
+            else if (ligne == 4){
+               GrilleJeu.SwitchEtat(ligne -1, col);
+            }
+            else{
+                GrilleJeu.SwitchEtat(ligne-1, col);
+                GrilleJeu.SwitchEtat(ligne+1, col);
+            }
         }
-        if (ligne != 0 && ligne != 4){
+        else if (ligne == 4){
             GrilleJeu.SwitchEtat(ligne -1, col);
-            GrilleJeu.SwitchEtat(ligne +1, col);
+            GrilleJeu.SwitchEtat(ligne,col+1);
+            GrilleJeu.SwitchEtat(ligne,col-1);
         }
-     
-     
-     
-    
+        else if (ligne== 0){
+            GrilleJeu.SwitchEtat(ligne +1, col);
+            GrilleJeu.SwitchEtat(ligne,col+1);
+            GrilleJeu.SwitchEtat(ligne,col-1);
+        }
+        else {
+            GrilleJeu.SwitchEtat(ligne-1,col);
+            GrilleJeu.SwitchEtat(ligne+1,col);
+            GrilleJeu.SwitchEtat(ligne,col-1);
+            GrilleJeu.SwitchEtat(ligne,col+1);
+        }
+  
      GrilleJeu.GrilleSurConsole();   
        }
        System.out.println("Bravo vous avez gagné !");
