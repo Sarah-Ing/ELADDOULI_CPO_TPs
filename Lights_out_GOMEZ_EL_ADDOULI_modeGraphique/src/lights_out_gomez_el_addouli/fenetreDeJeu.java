@@ -26,12 +26,19 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         panneau_grille = new javax.swing.JPanel();
         panneau_titre = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         panneau_creation_partie = new javax.swing.JPanel();
+        btn_start = new javax.swing.JButton();
         panneau_chrono = new javax.swing.JPanel();
         panneau_nb_coups = new javax.swing.JPanel();
         panneau_regles = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -42,10 +49,19 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         panneau_titre.setBackground(new java.awt.Color(204, 204, 255));
         panneau_titre.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Academy Engraved LET", 1, 36)); // NOI18N
+        jLabel2.setText("Lights Out");
+        panneau_titre.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 170, -1));
+
         getContentPane().add(panneau_titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 400, 60));
 
         panneau_creation_partie.setBackground(new java.awt.Color(204, 204, 255));
         panneau_creation_partie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_start.setText("Démarrer partie");
+        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 200, 70));
+
         getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 400, 90));
 
         panneau_chrono.setBackground(new java.awt.Color(204, 204, 255));
@@ -58,6 +74,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         panneau_regles.setBackground(new java.awt.Color(204, 204, 255));
         panneau_regles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Règles de jeu :");
+        panneau_regles.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel4.setText("A remplir");
+        panneau_regles.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 340, 90));
+
         getContentPane().add(panneau_regles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 400, 150));
 
         setBounds(0, 0, 1000, 628);
@@ -99,6 +122,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_start;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel panneau_chrono;
     private javax.swing.JPanel panneau_creation_partie;
     private javax.swing.JPanel panneau_grille;
