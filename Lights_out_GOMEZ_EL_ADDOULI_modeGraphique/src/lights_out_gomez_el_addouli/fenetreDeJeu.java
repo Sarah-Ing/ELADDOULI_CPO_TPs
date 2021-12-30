@@ -29,7 +29,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        setBounds(0, 0, 1030, 693);
+        setBounds(0, 0, 1000, 628);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
