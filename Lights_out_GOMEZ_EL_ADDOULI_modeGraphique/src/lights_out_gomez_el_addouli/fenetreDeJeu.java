@@ -37,18 +37,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panneau_grille.setBackground(new java.awt.Color(153, 102, 255));
-
-        javax.swing.GroupLayout panneau_grilleLayout = new javax.swing.GroupLayout(panneau_grille);
-        panneau_grille.setLayout(panneau_grilleLayout);
-        panneau_grilleLayout.setHorizontalGroup(
-            panneau_grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
-        );
-        panneau_grilleLayout.setVerticalGroup(
-            panneau_grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
-        );
-
+        panneau_grille.setLayout(new java.awt.GridLayout(5, 5));
         getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 460, 510));
 
         panneau_titre.setBackground(new java.awt.Color(204, 204, 255));
