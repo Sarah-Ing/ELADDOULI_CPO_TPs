@@ -31,7 +31,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_creation_partie = new javax.swing.JPanel();
         panneau_chrono = new javax.swing.JPanel();
         panneau_nb_coups = new javax.swing.JPanel();
-        panneau_règles = new javax.swing.JPanel();
+        panneau_regles = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,20 +111,20 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         getContentPane().add(panneau_nb_coups, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 140, 130));
 
-        panneau_règles.setBackground(new java.awt.Color(204, 204, 255));
+        panneau_regles.setBackground(new java.awt.Color(204, 204, 255));
 
-        javax.swing.GroupLayout panneau_règlesLayout = new javax.swing.GroupLayout(panneau_règles);
-        panneau_règles.setLayout(panneau_règlesLayout);
-        panneau_règlesLayout.setHorizontalGroup(
-            panneau_règlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panneau_reglesLayout = new javax.swing.GroupLayout(panneau_regles);
+        panneau_regles.setLayout(panneau_reglesLayout);
+        panneau_reglesLayout.setHorizontalGroup(
+            panneau_reglesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 410, Short.MAX_VALUE)
         );
-        panneau_règlesLayout.setVerticalGroup(
-            panneau_règlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panneau_reglesLayout.setVerticalGroup(
+            panneau_reglesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 160, Short.MAX_VALUE)
         );
 
-        getContentPane().add(panneau_règles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 410, 160));
+        getContentPane().add(panneau_regles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 410, 160));
 
         setBounds(0, 0, 1000, 628);
     }// </editor-fold>//GEN-END:initComponents
@@ -169,7 +169,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel panneau_creation_partie;
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JPanel panneau_nb_coups;
-    private javax.swing.JPanel panneau_règles;
+    private javax.swing.JPanel panneau_regles;
     private javax.swing.JPanel panneau_titre;
     // End of variables declaration//GEN-END:variables
 }
