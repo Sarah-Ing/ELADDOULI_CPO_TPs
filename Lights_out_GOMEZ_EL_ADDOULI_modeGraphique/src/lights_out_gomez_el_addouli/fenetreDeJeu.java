@@ -20,7 +20,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
         for (int i = 4; i >= 0; i--) {
             for (int j = 0; j < 5; j++) {
-                CelluleGraphique cellGraph = new CelluleGraphique();
+                CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Case[i][j]);
                 panneau_grille.add(cellGraph);
         }}
     }
