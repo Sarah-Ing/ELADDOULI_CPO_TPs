@@ -9,12 +9,20 @@ package lights_out_gomez_el_addouli;
  * @author sarah
  */
 public class fenetreDeJeu extends javax.swing.JFrame {
+    
+    Grille GrilleJeu = new Grille(); 
 
     /**
      * Creates new form fenetreDeJeu
      */
     public fenetreDeJeu() {
         initComponents();
+        
+        for (int i = 4; i >= 0; i--) {
+            for (int j = 0; j < 5; j++) {
+                CelluleGraphique cellGraph = new CelluleGraphique();
+                panneau_grille.add(cellGraph);
+        }}
     }
 
     /**

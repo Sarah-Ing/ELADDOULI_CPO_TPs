@@ -4,17 +4,19 @@
  */
 package lights_out_gomez_el_addouli;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Natha
  */
-public class CelluleGraphique {
+public class CelluleGraphique extends JButton {
     
     
-   // Grille CelluleAssociee;
+   Cellules CelluleAssociee;
     
-    public CelluleGraphique(Grille uneCellule){
+    //public CelluleGraphique(Grille uneCellule){
           //  CelluleAssociee = uneCellule;
-    }
+    //}
     
 }
