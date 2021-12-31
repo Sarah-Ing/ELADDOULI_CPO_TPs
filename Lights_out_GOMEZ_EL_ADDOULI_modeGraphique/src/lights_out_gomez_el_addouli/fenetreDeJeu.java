@@ -4,6 +4,8 @@
  */
 package lights_out_gomez_el_addouli;
 
+import java.util.Random;
+
 /**
  *
  * @author sarah
@@ -68,6 +70,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_creation_partie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_start.setText("Démarrer partie");
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
         panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 200, 70));
 
         getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 400, 90));
@@ -93,6 +100,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         setBounds(0, 0, 1000, 628);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_startActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,6 +140,16 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         });
     }
 
+    public void InitialiserPartie(){
+        Random nbAleatoire = new Random();
+        int CaseDeb = 1+nbAleatoire.nextInt(12);
+        for(int i=0; i<=CaseDeb ; i++){
+            int ligneAlea = nbAleatoire.nextInt(4);
+            int ColAlea = nbAleatoire.nextInt(4);
+            GrilleJeu.SwitchEtat(ligneAlea ,ColAlea);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_start;
     private javax.swing.JLabel jLabel1;
