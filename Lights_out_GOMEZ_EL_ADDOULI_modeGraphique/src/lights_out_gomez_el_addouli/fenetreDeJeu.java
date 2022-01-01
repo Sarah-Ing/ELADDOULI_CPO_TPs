@@ -11,20 +11,29 @@ import java.util.Random;
  * @author sarah
  */
 public class fenetreDeJeu extends javax.swing.JFrame {
-    
-    Grille GrilleJeu = new Grille(); 
+
+    Grille GrilleJeu = new Grille();
 
     /**
      * Creates new form fenetreDeJeu
      */
     public fenetreDeJeu() {
         initComponents();
-        
+
         for (int i = 4; i >= 0; i--) {
             for (int j = 0; j < 5; j++) {
                 CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Case[i][j]);
+
+                cellGraph.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                     
+                        jTextArea3.setText("truc");
+                    }
+                });
+
                 panneau_grille.add(cellGraph);
-        }}
+            }
+        }
     }
 
     /**
@@ -37,18 +46,26 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        textemessage = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         panneau_grille = new javax.swing.JPanel();
         panneau_titre = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         panneau_creation_partie = new javax.swing.JPanel();
         btn_start = new javax.swing.JButton();
         panneau_chrono = new javax.swing.JPanel();
+        truc = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
         panneau_nb_coups = new javax.swing.JPanel();
         panneau_regles = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
         jLabel1.setText("jLabel1");
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        textemessage.setViewportView(jTextArea2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,6 +98,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         panneau_chrono.setBackground(new java.awt.Color(204, 204, 255));
         panneau_chrono.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        truc.setViewportView(jTextArea3);
+
+        panneau_chrono.add(truc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, -1));
+
         getContentPane().add(panneau_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 130, 130));
 
         panneau_nb_coups.setBackground(new java.awt.Color(204, 204, 255));
@@ -104,13 +128,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
-        
+
         InitialiserPartie();
-        
+
         panneau_grille.repaint();// rafraichit l'affichage 
-        
+
         btn_start.setEnabled(false); // on ne peut pas cliquer plusieurs fois sur le btn Démarrer partie
-        
+
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -148,27 +172,31 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         });
     }
 
-    public void InitialiserPartie(){
+    public void InitialiserPartie() {
         Random nbAleatoire = new Random();
-        int CaseDeb = 1+nbAleatoire.nextInt(12);
-        for(int i=0; i<=CaseDeb ; i++){
+        int CaseDeb = 1 + nbAleatoire.nextInt(12);
+        for (int i = 0; i <= CaseDeb; i++) {
             int ligneAlea = nbAleatoire.nextInt(4);
             int ColAlea = nbAleatoire.nextInt(4);
-            GrilleJeu.SwitchEtat(ligneAlea ,ColAlea);
+            GrilleJeu.SwitchEtat(ligneAlea, ColAlea);
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_start;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JPanel panneau_chrono;
     private javax.swing.JPanel panneau_creation_partie;
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JPanel panneau_nb_coups;
     private javax.swing.JPanel panneau_regles;
     private javax.swing.JPanel panneau_titre;
+    private javax.swing.JScrollPane textemessage;
+    private javax.swing.JScrollPane truc;
     // End of variables declaration//GEN-END:variables
 }
