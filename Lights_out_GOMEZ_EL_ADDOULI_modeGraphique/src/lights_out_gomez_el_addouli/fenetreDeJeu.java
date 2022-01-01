@@ -104,6 +104,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
         
         InitialiserPartie();
+        
+        panneau_grille.repaint();
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
