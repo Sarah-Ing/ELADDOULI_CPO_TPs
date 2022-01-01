@@ -29,9 +29,6 @@ public class CelluleGraphique extends JButton {
        
        // nous n'avons pas de méthodes pour savoir si la case est allumée :
        
-       
-       
-       
        if(CelluleAssociee.Etat == true)
        {setIcon(img_On);}
        if(CelluleAssociee.Etat == false)
