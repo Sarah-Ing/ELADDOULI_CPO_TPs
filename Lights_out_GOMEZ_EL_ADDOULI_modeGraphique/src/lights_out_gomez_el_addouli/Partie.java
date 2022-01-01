@@ -15,7 +15,7 @@ public class Partie {
     
     Grille GrilleJeu = new Grille();
     
-    public void InitialiserPartie(){
+    public void InitialiserPartie(){  
         Random nbAleatoire = new Random();
         int CaseDeb = 1+nbAleatoire.nextInt(12);
         for(int i=0; i<=CaseDeb ; i++){
