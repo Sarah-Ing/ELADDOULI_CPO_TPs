@@ -45,8 +45,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_chrono = new javax.swing.JPanel();
         panneau_nb_coups = new javax.swing.JPanel();
         panneau_regles = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         jLabel1.setText("jLabel1");
 
@@ -81,22 +81,24 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         panneau_chrono.setBackground(new java.awt.Color(204, 204, 255));
         panneau_chrono.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(panneau_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 130, 130));
+        getContentPane().add(panneau_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 130, 130));
 
         panneau_nb_coups.setBackground(new java.awt.Color(204, 204, 255));
         panneau_nb_coups.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(panneau_nb_coups, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 130, 130));
+        getContentPane().add(panneau_nb_coups, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 130, 130));
 
         panneau_regles.setBackground(new java.awt.Color(204, 204, 255));
         panneau_regles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("Règles de jeu :");
-        panneau_regles.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("But du Jeu : \nAvoir une grille avec toute les cases éteintes en un \nminimum de temps.  \n\nRègles : \nLorsque l'on appuie sur une case, celle-ci ainsi que les\ncases adjacente, excepté les diagonales, changent de \npolarité (les cases éteintes s'allument et les cases allumées\ns'éteignent).");
+        jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel4.setText("A remplir");
-        panneau_regles.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 340, 90));
+        panneau_regles.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 150));
 
-        getContentPane().add(panneau_regles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 400, 150));
+        getContentPane().add(panneau_regles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 400, 170));
 
         setBounds(0, 0, 1000, 628);
     }// </editor-fold>//GEN-END:initComponents
@@ -160,8 +162,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton btn_start;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panneau_chrono;
     private javax.swing.JPanel panneau_creation_partie;
     private javax.swing.JPanel panneau_grille;
