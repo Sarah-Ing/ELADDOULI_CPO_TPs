@@ -14,7 +14,7 @@ public class Cellules {
     
     
     public Cellules(){
-        Etat = false;
+        Etat = true;
     }
     
 }

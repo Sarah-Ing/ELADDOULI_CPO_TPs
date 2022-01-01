@@ -102,7 +102,8 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
-        // TODO add your handling code here:
+        
+        InitialiserPartie();
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
