@@ -20,18 +20,20 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     public fenetreDeJeu() {
         initComponents();
 
-        for (int i = 4; i >= 0; i--) {
-            for (int j = 0; j < 5; j++) {
-                CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Case[i][j]);
+        for (int ligne = 4; ligne >= 0; ligne--) {
+            for (int col = 0; col < 5; col++) {
+                CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Case[ligne][col]);
 
                 cellGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         
                         Cellules c = cellGraph.CelluleAssociee; // c cellule de la grille de jeu associé au bouton sur lequel on clique
                         
-                        
-                     
                         jTextArea3.setText("truc");// juste de la vérification A SUPPRIMER 
+                        
+                        
+                        
+                        panneau_grille.repaint(); 
                     }
                 });
 
