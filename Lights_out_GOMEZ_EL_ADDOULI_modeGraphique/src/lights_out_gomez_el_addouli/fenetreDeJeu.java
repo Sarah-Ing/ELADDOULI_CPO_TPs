@@ -26,8 +26,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
                 cellGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        
+                        Cellules c = cellGraph.CelluleAssociee; // c cellule de la grille de jeu associé au bouton sur lequel on clique
+                        
+                        
                      
-                        jTextArea3.setText("truc");
+                        jTextArea3.setText("truc");// juste de la vérification A SUPPRIMER 
                     }
                 });
 
