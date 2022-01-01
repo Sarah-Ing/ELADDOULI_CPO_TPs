@@ -105,7 +105,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         
         InitialiserPartie();
         
-        panneau_grille.repaint();
+        panneau_grille.repaint();// rafraichit l'affichage 
+        
+        btn_start.setEnabled(false); // on ne peut pas cliquer plusieurs fois sur le btn Démarrer partie
+        
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
