@@ -16,6 +16,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
     Grille GrilleJeu = new Grille();
     Partie P = new Partie();
+    CelluleGraphique[][] tab = new CelluleGraphique[5][5];
 
     /**
      * Creates new form fenetreDeJeu
@@ -30,6 +31,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 int b = col;
                 CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Case[ligne][col]);
 
+                tab[ligne][col] = cellGraph;
+                tab[ligne][col].setEnabled(false);
+
                 cellGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
 
@@ -42,7 +46,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                         panneau_grille.repaint();
                         if (GrilleJeu.GrilleEteinte() == true) {
                             jTextArea3.setText("Victoire !");
-                            panneau_grille.setEnabled(false);
+
+                            for (int ligne = 4; ligne >= 0; ligne--) {
+                                for (int col = 0; col < 5; col++) {
+                                    tab[ligne][col].setEnabled(false);
+                                }
+                            }
                         }
                     }
                 });
@@ -168,6 +177,13 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+        for (int ligne = 4; ligne >= 0; ligne--) {
+            for (int col = 0; col < 5; col++) {
+                tab[ligne][col].setEnabled(true);
+
+            }
+
+        }
 
         InitialiserPartie();
 
