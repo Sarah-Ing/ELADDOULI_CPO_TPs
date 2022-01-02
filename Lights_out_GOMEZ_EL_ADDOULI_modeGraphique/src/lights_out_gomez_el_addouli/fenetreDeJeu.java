@@ -41,7 +41,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
                         DebuterPartie(a, b);
 
-                        jTextArea3.setText("La cellule a été sélectionnée.");// juste de la vérification A SUPPRIMER 
+                        jTextArea3.setText("La cellule a été sélectionnée.");
 
                         panneau_grille.repaint();
                         if (GrilleJeu.GrilleEteinte() == true) {
