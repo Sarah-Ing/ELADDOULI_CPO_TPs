@@ -4,6 +4,7 @@
  */
 package lights_out_gomez_el_addouli;
 
+import java.awt.event.ActionEvent;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -24,27 +25,24 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         for (int ligne = 4; ligne >= 0; ligne--) {
             for (int col = 0; col < 5; col++) {
-                
-                int a=ligne;
-                int b=col;
+
+                int a = ligne;
+                int b = col;
                 CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Case[ligne][col]);
-                   
+
                 cellGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        
-                        
+
                         Cellules c = cellGraph.CelluleAssociee; // c cellule de la grille de jeu associé au bouton sur lequel on clique
-                        
+
                         DebuterPartie(a, b);
-                        
-                        jTextArea3.setText("truc");// juste de la vérification A SUPPRIMER 
-                        
-                       
-                        panneau_grille.repaint(); 
-                        if (GrilleJeu.GrilleEteinte() == true)
-                        {
-                        jTextArea3.setText("Victoire !");
-                        panneau_grille.setEnabled(false);
+
+                        jTextArea3.setText("La cellule a été sélectionnée.");// juste de la vérification A SUPPRIMER 
+
+                        panneau_grille.repaint();
+                        if (GrilleJeu.GrilleEteinte() == true) {
+                            jTextArea3.setText("Victoire !");
+                            panneau_grille.setEnabled(false);
                         }
                     }
                 });
@@ -66,6 +64,7 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         textemessage = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
         panneau_grille = new javax.swing.JPanel();
         panneau_titre = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -74,7 +73,12 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         panneau_chrono = new javax.swing.JPanel();
         truc = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
-        panneau_nb_coups = new javax.swing.JPanel();
+        chrono = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         panneau_regles = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -93,13 +97,14 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 500, 500));
 
         panneau_titre.setBackground(new java.awt.Color(204, 204, 255));
+        panneau_titre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panneau_titre.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Academy Engraved LET", 1, 36)); // NOI18N
         jLabel2.setText("Lights Out");
-        panneau_titre.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 170, -1));
+        panneau_titre.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 170, -1));
 
-        getContentPane().add(panneau_titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 400, 60));
+        getContentPane().add(panneau_titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 400, -1));
 
         panneau_creation_partie.setBackground(new java.awt.Color(204, 204, 255));
         panneau_creation_partie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -110,9 +115,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                 btn_startActionPerformed(evt);
             }
         });
-        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 200, 70));
+        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 190, 60));
 
-        getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 400, 90));
+        getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 400, 80));
 
         panneau_chrono.setBackground(new java.awt.Color(204, 204, 255));
         panneau_chrono.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,26 +126,43 @@ public class fenetreDeJeu extends javax.swing.JFrame {
         jTextArea3.setRows(5);
         truc.setViewportView(jTextArea3);
 
-        panneau_chrono.add(truc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, -1));
+        panneau_chrono.add(truc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 360, -1));
 
-        getContentPane().add(panneau_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 130, 130));
+        getContentPane().add(panneau_chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 420, 400, 110));
 
-        panneau_nb_coups.setBackground(new java.awt.Color(204, 204, 255));
-        panneau_nb_coups.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(panneau_nb_coups, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 130, 130));
+        chrono.setBackground(new java.awt.Color(204, 204, 255));
+        chrono.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        chrono.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        chrono.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 30, 30));
+
+        jPanel3.setBackground(new java.awt.Color(153, 102, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        chrono.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        jLabel4.setText("Case allumée");
+        chrono.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+
+        jLabel5.setText("Case éteinte");
+        chrono.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        getContentPane().add(chrono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 400, 50));
 
         panneau_regles.setBackground(new java.awt.Color(204, 204, 255));
         panneau_regles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("But du Jeu : \nAvoir une grille avec toute les cases éteintes en un \nminimum de temps.  \n\nRègles : \nLorsque l'on appuie sur une case, celle-ci ainsi que les\ncases adjacente, excepté les diagonales, changent de \npolarité (les cases éteintes s'allument et les cases allumées\ns'éteignent).");
+        jTextArea1.setText("But du Jeu : \nAvoir une grille avec toute les cases éteintes (= violet foncé).\n\n\nRègles : \nLorsque l'on appuie sur une case, celle-ci ainsi que les\ncases adjacente, excepté les diagonales, changent de \npolarité (les cases éteintes s'allument et les cases allumées\ns'éteignent).\n\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         panneau_regles.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 150));
 
-        getContentPane().add(panneau_regles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 400, 170));
+        getContentPane().add(panneau_regles, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 400, 170));
 
         setBounds(0, 0, 1000, 628);
     }// </editor-fold>//GEN-END:initComponents
@@ -148,11 +170,9 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
 
         InitialiserPartie();
-        
+
         panneau_grille.repaint();// rafraichit l'affichage 
         btn_start.setEnabled(false); // on ne peut pas cliquer plusieurs fois sur le btn Démarrer partie
-
-        
 
     }//GEN-LAST:event_btn_startActionPerformed
 
@@ -200,72 +220,60 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             GrilleJeu.SwitchEtat(ligneAlea, ColAlea);
         }
     }
-    
-    public void DebuterPartie(int ligne, int col){
-        
-        
-      
-        
-        
-        GrilleJeu.SwitchEtat(ligne , col);
-        if (col == 0 ){
-            GrilleJeu.SwitchEtat(ligne , col +1);
-            if (ligne == 0){
-                GrilleJeu.SwitchEtat(ligne +1, col);
-            }
-            else if (ligne == 4){
-               GrilleJeu.SwitchEtat(ligne -1, col);
-            }
-            else {
-                GrilleJeu.SwitchEtat(ligne-1,col);
-                GrilleJeu.SwitchEtat(ligne+1,col);
-            }
-        }
-        else if (col== 4 ){
-            GrilleJeu.SwitchEtat(ligne , col -1);
-        
-            if (ligne == 0){
-                GrilleJeu.SwitchEtat(ligne +1, col);
-            }
-            else if (ligne == 4){
-               GrilleJeu.SwitchEtat(ligne -1, col);
-            }
-            else{
-                GrilleJeu.SwitchEtat(ligne-1, col);
-                GrilleJeu.SwitchEtat(ligne+1, col);
-            }
-        }
-        else if (ligne == 4){
-            GrilleJeu.SwitchEtat(ligne -1, col);
-            GrilleJeu.SwitchEtat(ligne,col+1);
-            GrilleJeu.SwitchEtat(ligne,col-1);
-        }
-        else if (ligne== 0){
-            GrilleJeu.SwitchEtat(ligne +1, col);
-            GrilleJeu.SwitchEtat(ligne,col+1);
-            GrilleJeu.SwitchEtat(ligne,col-1);
-        }
-        else {
-            GrilleJeu.SwitchEtat(ligne-1,col);
-            GrilleJeu.SwitchEtat(ligne+1,col);
-            GrilleJeu.SwitchEtat(ligne,col-1);
-            GrilleJeu.SwitchEtat(ligne,col+1);
-        }
-  
-     
-       }
-       
-    
 
-    
-    
-      
-    
+    public void DebuterPartie(int ligne, int col) {
+
+        GrilleJeu.SwitchEtat(ligne, col);
+        if (col == 0) {
+            GrilleJeu.SwitchEtat(ligne, col + 1);
+            if (ligne == 0) {
+                GrilleJeu.SwitchEtat(ligne + 1, col);
+            } else if (ligne == 4) {
+                GrilleJeu.SwitchEtat(ligne - 1, col);
+            } else {
+                GrilleJeu.SwitchEtat(ligne - 1, col);
+                GrilleJeu.SwitchEtat(ligne + 1, col);
+            }
+        } else if (col == 4) {
+            GrilleJeu.SwitchEtat(ligne, col - 1);
+
+            if (ligne == 0) {
+                GrilleJeu.SwitchEtat(ligne + 1, col);
+            } else if (ligne == 4) {
+                GrilleJeu.SwitchEtat(ligne - 1, col);
+            } else {
+                GrilleJeu.SwitchEtat(ligne - 1, col);
+                GrilleJeu.SwitchEtat(ligne + 1, col);
+            }
+        } else if (ligne == 4) {
+            GrilleJeu.SwitchEtat(ligne - 1, col);
+            GrilleJeu.SwitchEtat(ligne, col + 1);
+            GrilleJeu.SwitchEtat(ligne, col - 1);
+        } else if (ligne == 0) {
+            GrilleJeu.SwitchEtat(ligne + 1, col);
+            GrilleJeu.SwitchEtat(ligne, col + 1);
+            GrilleJeu.SwitchEtat(ligne, col - 1);
+        } else {
+            GrilleJeu.SwitchEtat(ligne - 1, col);
+            GrilleJeu.SwitchEtat(ligne + 1, col);
+            GrilleJeu.SwitchEtat(ligne, col - 1);
+            GrilleJeu.SwitchEtat(ligne, col + 1);
+        }
+
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_start;
+    private javax.swing.JPanel chrono;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
@@ -273,7 +281,6 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel panneau_chrono;
     private javax.swing.JPanel panneau_creation_partie;
     private javax.swing.JPanel panneau_grille;
-    private javax.swing.JPanel panneau_nb_coups;
     private javax.swing.JPanel panneau_regles;
     private javax.swing.JPanel panneau_titre;
     private javax.swing.JScrollPane textemessage;
