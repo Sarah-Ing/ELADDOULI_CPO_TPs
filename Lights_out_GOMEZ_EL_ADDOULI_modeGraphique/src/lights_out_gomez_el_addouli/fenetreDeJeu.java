@@ -5,6 +5,7 @@
 package lights_out_gomez_el_addouli;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -187,6 +188,10 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             GrilleJeu.SwitchEtat(ligneAlea, ColAlea);
         }
     }
+    
+    
+      
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_start;
