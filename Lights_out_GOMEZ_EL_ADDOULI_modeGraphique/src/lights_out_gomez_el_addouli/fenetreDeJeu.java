@@ -37,12 +37,15 @@ public class fenetreDeJeu extends javax.swing.JFrame {
                         
                         DebuterPartie(a, b);
                         
-                        
                         jTextArea3.setText("truc");// juste de la vérification A SUPPRIMER 
                         
                        
-                        
                         panneau_grille.repaint(); 
+                        if (GrilleJeu.GrilleEteinte() == true)
+                        {
+                        jTextArea3.setText("Victoire !");
+                        panneau_grille.setEnabled(false);
+                        }
                     }
                 });
 
