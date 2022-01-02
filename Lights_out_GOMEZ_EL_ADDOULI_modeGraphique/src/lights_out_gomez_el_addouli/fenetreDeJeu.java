@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class fenetreDeJeu extends javax.swing.JFrame {
 
     Grille GrilleJeu = new Grille();
+    Partie P = new Partie();
 
     /**
      * Creates new form fenetreDeJeu
@@ -23,16 +24,23 @@ public class fenetreDeJeu extends javax.swing.JFrame {
 
         for (int ligne = 4; ligne >= 0; ligne--) {
             for (int col = 0; col < 5; col++) {
+                
+                int a=ligne;
+                int b=col;
                 CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Case[ligne][col]);
-
+                   
                 cellGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         
+                        
                         Cellules c = cellGraph.CelluleAssociee; // c cellule de la grille de jeu associé au bouton sur lequel on clique
+                        
+                        DebuterPartie(a, b);
+                        
                         
                         jTextArea3.setText("truc");// juste de la vérification A SUPPRIMER 
                         
-                        
+                       
                         
                         panneau_grille.repaint(); 
                     }
@@ -137,10 +145,11 @@ public class fenetreDeJeu extends javax.swing.JFrame {
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
 
         InitialiserPartie();
-
+        
         panneau_grille.repaint();// rafraichit l'affichage 
-
         btn_start.setEnabled(false); // on ne peut pas cliquer plusieurs fois sur le btn Démarrer partie
+
+        
 
     }//GEN-LAST:event_btn_startActionPerformed
 
@@ -188,6 +197,63 @@ public class fenetreDeJeu extends javax.swing.JFrame {
             GrilleJeu.SwitchEtat(ligneAlea, ColAlea);
         }
     }
+    
+    public void DebuterPartie(int ligne, int col){
+        
+        
+      
+        
+        
+        GrilleJeu.SwitchEtat(ligne , col);
+        if (col == 0 ){
+            GrilleJeu.SwitchEtat(ligne , col +1);
+            if (ligne == 0){
+                GrilleJeu.SwitchEtat(ligne +1, col);
+            }
+            else if (ligne == 4){
+               GrilleJeu.SwitchEtat(ligne -1, col);
+            }
+            else {
+                GrilleJeu.SwitchEtat(ligne-1,col);
+                GrilleJeu.SwitchEtat(ligne+1,col);
+            }
+        }
+        else if (col== 4 ){
+            GrilleJeu.SwitchEtat(ligne , col -1);
+        
+            if (ligne == 0){
+                GrilleJeu.SwitchEtat(ligne +1, col);
+            }
+            else if (ligne == 4){
+               GrilleJeu.SwitchEtat(ligne -1, col);
+            }
+            else{
+                GrilleJeu.SwitchEtat(ligne-1, col);
+                GrilleJeu.SwitchEtat(ligne+1, col);
+            }
+        }
+        else if (ligne == 4){
+            GrilleJeu.SwitchEtat(ligne -1, col);
+            GrilleJeu.SwitchEtat(ligne,col+1);
+            GrilleJeu.SwitchEtat(ligne,col-1);
+        }
+        else if (ligne== 0){
+            GrilleJeu.SwitchEtat(ligne +1, col);
+            GrilleJeu.SwitchEtat(ligne,col+1);
+            GrilleJeu.SwitchEtat(ligne,col-1);
+        }
+        else {
+            GrilleJeu.SwitchEtat(ligne-1,col);
+            GrilleJeu.SwitchEtat(ligne+1,col);
+            GrilleJeu.SwitchEtat(ligne,col-1);
+            GrilleJeu.SwitchEtat(ligne,col+1);
+        }
+  
+     
+       }
+       
+    
+
     
     
       

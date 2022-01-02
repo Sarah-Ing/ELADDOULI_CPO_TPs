@@ -26,26 +26,15 @@ public class Partie {
     }
     
     public void DebuterPartie(){
+        
         GrilleJeu.GrilleSurConsole();
         
        while(GrilleJeu.GrilleEteinte()== false){
         
-        int ligne =-1;
+        int ligne = -1;
         int col = -1;
-        while (ligne <0 || ligne >4){
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Saisissez le numéro de la ligne : (entre 1 et 5)");
-            ligne  = sc.nextInt();
-            ligne = ligne-1;
-           
-        }
-        while (col <0 || col >4){
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Saisissez le numéro de la colonne : (entre 1 et 5)");
-            col  = sc.nextInt();
-            col = col-1;
-           
-        }
+        
+        
         GrilleJeu.SwitchEtat(ligne , col);
         if (col == 0 ){
             GrilleJeu.SwitchEtat(ligne , col +1);
