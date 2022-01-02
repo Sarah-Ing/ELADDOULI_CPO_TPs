@@ -9,12 +9,11 @@ package lights_out_gomez_el_addouli;
  * @author Natha
  */
 public class Cellules {
-    
+
     boolean Etat;
-    
-    
-    public Cellules(){
+
+    public Cellules() {
         Etat = true;
     }
-    
+
 }
